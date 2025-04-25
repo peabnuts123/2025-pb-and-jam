@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch1arasjga7d5"]
+
+[ext_resource type="Theme" uid="uid://dv4mr2hyfhanw" path="res://resources/text.tres" id="1_yqeox"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Container" type="VFlowContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Container"]
+layout_mode = 2
+theme = ExtResource("1_yqeox")
+text = "Sparks Joy"
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="Container"]
+layout_mode = 2
+theme = ExtResource("1_yqeox")
+text = "Play"

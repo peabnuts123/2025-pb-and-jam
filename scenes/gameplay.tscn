@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://pn0718o8e7g5"]
+
+[ext_resource type="PackedScene" uid="uid://bt1neao7v1xcj" path="res://scenes/decision_screen/decision_screen.tscn" id="1_7biu0"]
+
+[node name="gameplay" type="Node2D"]
+
+[node name="decision-screen" parent="." instance=ExtResource("1_7biu0")]

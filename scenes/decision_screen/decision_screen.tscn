@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bt1neao7v1xcj"]
+
+[node name="decision-screen" type="Node2D"]
+
+[node name="HFlowContainer" type="HSplitContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 150.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Keep" type="Label" parent="HFlowContainer"]
+layout_mode = 2
+text = "Keep	"
+
+[node name="Thank" type="Label" parent="HFlowContainer"]
+layout_mode = 2
+text = "Thank"
