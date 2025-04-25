@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6tecvr0c0gn5" path="res://scripts/gameplay/bullet-hell/debug_timer.gd" id="1_3hdpf"]
 [ext_resource type="Script" uid="uid://boai62rv84x88" path="res://scripts/gameplay/bullet-hell/bullet_hell.gd" id="1_86dn8"]
-[ext_resource type="PackedScene" path="res://scenes/gameplay/boss.tscn" id="3_cdxiu"]
+[ext_resource type="PackedScene" uid="uid://bonr8npmg7qyc" path="res://scenes/gameplay/boss.tscn" id="3_cdxiu"]
 [ext_resource type="PackedScene" path="res://scenes/gameplay/player.tscn" id="4_fav26"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ey8vg"]
