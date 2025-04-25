@@ -18,6 +18,30 @@ var _coin: int = 3
 @export var stat_base_momentum: int = 10;
 
 # Stats for your current run (reset each time you die)
-@export var stat_current_productivity: int = 0;
-@export var stat_current_wellbeing: int = 0;
-@export var stat_current_momentum: int = 0;
+signal stat_current_productivity_changed
+signal stat_current_wellbeing_changed
+signal stat_current_momentum_changed
+var _current_productivity
+var _current_wellbeing
+var _current_momentum
+
+@export var stat_current_productivity: int = 0 :
+	get:
+		return _current_productivity
+	set(value):
+		_current_productivity = value
+		emit_signal('stat_current_productivity_changed')
+
+@export var stat_current_wellbeing: int = 0 :
+	get:
+		return _current_wellbeing
+	set(value):
+		_current_wellbeing = value
+		emit_signal('stat_current_wellbeing_changed')
+
+@export var stat_current_momentum: int = 0 :
+	get:
+		return _current_momentum
+	set(value):
+		_current_momentum = value
+		emit_signal('stat_current_momentum_changed')

@@ -30,8 +30,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 50
-text = "This sparks joy
-+???"
+text = "This sparks joy"
 
 [node name="Discard" type="Button" parent="CanvasLayer/VBoxContainer/HSplitContainer"]
 layout_mode = 2
