@@ -18,3 +18,7 @@ func _on_screen_exited():
 func set_property(type):
 	bullet_type = type
 	$Sprite2D.texture = texture_array[type]
+
+
+func _on_body_entered(body):
+	body.set_status(bullet_type)
