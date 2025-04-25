@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://pn0718o8e7g5"]
+[gd_scene load_steps=3 format=3 uid="uid://pn0718o8e7g5"]
 
-[ext_resource type="PackedScene" uid="uid://bt1neao7v1xcj" path="res://scenes/decision_screen/decision_screen.tscn" id="1_7biu0"]
+[ext_resource type="PackedScene" uid="uid://dlfx5ga1xldxk" path="res://scenes/gameplay/bullet_hell.tscn" id="1_00tan"]
+[ext_resource type="PackedScene" uid="uid://bt1neao7v1xcj" path="res://scenes/gameplay/decision_screen.tscn" id="1_7biu0"]
 
 [node name="gameplay" type="Node2D"]
+
+[node name="bullet-hell" parent="." instance=ExtResource("1_00tan")]
+position = Vector2(8.63318, -76.6406)
 
 [node name="decision-screen" parent="." instance=ExtResource("1_7biu0")]
