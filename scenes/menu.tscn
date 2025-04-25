@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://ch1arasjga7d5"]
+[gd_scene load_steps=3 format=3 uid="uid://ch1arasjga7d5"]
 
+[ext_resource type="Script" uid="uid://cntvyyy03tkm0" path="res://scripts/menu/menu.gd" id="1_vjb58"]
 [ext_resource type="Theme" uid="uid://dv4mr2hyfhanw" path="res://resources/text.tres" id="1_yqeox"]
 
 [node name="Main Menu" type="Control"]
@@ -11,6 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_vjb58")
 
 [node name="Container" type="VFlowContainer" parent="."]
 layout_mode = 1
@@ -30,3 +32,5 @@ horizontal_alignment = 1
 layout_mode = 2
 theme = ExtResource("1_yqeox")
 text = "Play"
+
+[connection signal="pressed" from="Container/Play" to="." method="_on_play_pressed"]
