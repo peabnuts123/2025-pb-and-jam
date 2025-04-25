@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://cvotrnmyjsulh"]
+
+[ext_resource type="Script" uid="uid://cjoqbl4ky5eik" path="res://scripts/gameplay/bullet-hell/boss.gd" id="1_fooby"]
+[ext_resource type="PackedScene" uid="uid://e3mcb03cfh1x" path="res://scenes/gameplay/bullet.tscn" id="2_6of3n"]
+[ext_resource type="Script" uid="uid://cn3uy77fairjw" path="res://scripts/gameplay/bullet-hell/finite_state_machine.gd" id="3_keu4x"]
+[ext_resource type="Script" uid="uid://d2dd8c68lr73r" path="res://scripts/gameplay/bullet-hell/idle.gd" id="4_b3fdw"]
+[ext_resource type="Script" uid="uid://bnudxubbxcc8o" path="res://scripts/gameplay/bullet-hell/5_leaf.gd" id="5_20b4o"]
+[ext_resource type="Script" uid="uid://b8mxdw66iuaal" path="res://scripts/gameplay/bullet-hell/4_leaf.gd" id="6_fnu1i"]
+[ext_resource type="Script" uid="uid://ckdipvde7gw53" path="res://scripts/gameplay/bullet-hell/3_leaf.gd" id="7_3xo6r"]
+[ext_resource type="Script" uid="uid://bu58k0pips46h" path="res://scripts/gameplay/bullet-hell/2_leaf.gd" id="8_3xo6r"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2gjxj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6of3n"]
+radius = 96.2052
+
+[node name="Boss" type="CharacterBody2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_fooby")
+alpha = 2.83
+bullet_node = ExtResource("2_6of3n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.986528, 0.618562, 0.649134, 1)
+position = Vector2(-0.2, 0.4)
+scale = Vector2(20, 17.674)
+texture = SubResource("PlaceholderTexture2D_2gjxj")
+
+[node name="Speed" type="Timer" parent="."]
+wait_time = 0.05
+
+[node name="Duration" type="Timer" parent="."]
+wait_time = 4.0
+
+[node name="debug" type="Label" parent="."]
+offset_left = -24.4
+offset_top = -32.6
+offset_right = 24.6
+offset_bottom = -9.6
+text = "debug"
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_6of3n")
+
+[node name="FiniteStateMachine" type="Node2D" parent="."]
+script = ExtResource("3_keu4x")
+
+[node name="Idle" type="Node2D" parent="FiniteStateMachine"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("4_b3fdw")
+
+[node name="5Leaf" type="Node2D" parent="FiniteStateMachine"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("5_20b4o")
+
+[node name="4Leaf" type="Node2D" parent="FiniteStateMachine"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("6_fnu1i")
+
+[node name="3Leaf" type="Node2D" parent="FiniteStateMachine"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("7_3xo6r")
+
+[node name="2Leaf" type="Node2D" parent="FiniteStateMachine"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("8_3xo6r")
+
+[connection signal="timeout" from="Speed" to="." method="_on_speed_timeout"]
+[connection signal="body_entered" from="PlayerDetection" to="FiniteStateMachine/Idle" method="_on_player_entered"]

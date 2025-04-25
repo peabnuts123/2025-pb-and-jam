@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlfx5ga1xldxk"]
+[gd_scene load_steps=6 format=3 uid="uid://dlfx5ga1xldxk"]
 
 [ext_resource type="Script" uid="uid://6tecvr0c0gn5" path="res://scripts/gameplay/bullet-hell/debug_timer.gd" id="1_3hdpf"]
 [ext_resource type="Script" uid="uid://boai62rv84x88" path="res://scripts/gameplay/bullet-hell/bullet_hell.gd" id="1_86dn8"]
+[ext_resource type="PackedScene" uid="uid://cvotrnmyjsulh" path="res://scenes/gameplay/boss.tscn" id="3_cdxiu"]
+[ext_resource type="PackedScene" uid="uid://b8yqqg8domque" path="res://scenes/gameplay/player.tscn" id="4_fav26"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ey8vg"]
 
@@ -41,5 +43,11 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
 text = "Die (debug)"
+
+[node name="Boss" parent="." instance=ExtResource("3_cdxiu")]
+position = Vector2(649, 175)
+
+[node name="player" parent="." instance=ExtResource("4_fav26")]
+position = Vector2(250, 408)
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/KYS" to="." method="_on_kys_pressed"]

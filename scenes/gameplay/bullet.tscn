@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://e3mcb03cfh1x"]
+
+[ext_resource type="Script" uid="uid://dh762j2aumbf7" path="res://scripts/gameplay/bullet-hell/bullet.gd" id="1_4wbcd"]
+[ext_resource type="Texture2D" uid="uid://ckplng6cafyuo" path="res://assets/bullet-placeholders/16x16px/01.png" id="1_ihgv0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ihgv0"]
+radius = 9.05539
+
+[node name="bullet" type="Area2D"]
+script = ExtResource("1_4wbcd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ihgv0")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ihgv0")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
