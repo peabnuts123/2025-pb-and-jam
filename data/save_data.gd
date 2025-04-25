@@ -1,6 +1,16 @@
 extends Node
 
-@export var coin: float = 0;
+# NOTE: Use signal to allow UI elements to "react" to changes
+signal coin_changed
+var _coin: int = 3
+@export var coin: int :
+	get:
+		return _coin
+	set(value):
+		_coin = value
+		emit_signal('coin_changed')
+
+@export var game_over_message: String = "";
 
 # Universal stats i.e. the stats on the main menu
 @export var stat_base_productivity: int = 10;

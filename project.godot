@@ -11,14 +11,19 @@ config_version=5
 [application]
 
 config/name="2025-pb-and-jam"
-run/main_scene="uid://2tmbe6yj1588"
+run/main_scene="uid://ch1arasjga7d5"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SaveData="*res://data/save_data.gd"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

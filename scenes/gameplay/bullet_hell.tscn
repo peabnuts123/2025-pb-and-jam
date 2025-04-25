@@ -1,10 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlfx5ga1xldxk"]
+[gd_scene load_steps=4 format=3 uid="uid://dlfx5ga1xldxk"]
+
+[ext_resource type="Script" uid="uid://6tecvr0c0gn5" path="res://scripts/gameplay/bullet-hell/debug_timer.gd" id="1_3hdpf"]
+[ext_resource type="Script" uid="uid://boai62rv84x88" path="res://scripts/gameplay/bullet-hell/bullet_hell.gd" id="1_86dn8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ey8vg"]
 
 [node name="BulletHell" type="Node2D"]
+script = ExtResource("1_86dn8")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CapsuleShape2D_ey8vg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="debug_message" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "A really sweet bullet hell is going on here"
+horizontal_alignment = 1
+
+[node name="debug_timer" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "5"
+horizontal_alignment = 1
+script = ExtResource("1_3hdpf")
+
+[node name="KYS" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Die (debug)"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/KYS" to="." method="_on_kys_pressed"]
