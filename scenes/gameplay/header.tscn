@@ -33,7 +33,19 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 max_value = 1.0
+allow_greater = true
 show_percentage = false
+
+[node name="Value" type="Label" parent="Wellbeing/VBoxContainer/ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Wellbeing/VBoxContainer"]
 layout_mode = 2
@@ -64,6 +76,17 @@ size_flags_vertical = 1
 max_value = 1.0
 show_percentage = false
 
+[node name="Value" type="Label" parent="Productivity/VBoxContainer/ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Label" type="Label" parent="Productivity/VBoxContainer"]
 layout_mode = 2
 text = "Productivity"
@@ -92,6 +115,17 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 max_value = 1.0
 show_percentage = false
+
+[node name="Value" type="Label" parent="Momentum/VBoxContainer/ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Momentum/VBoxContainer"]
 layout_mode = 2

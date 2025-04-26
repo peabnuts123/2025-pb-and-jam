@@ -4,6 +4,9 @@ extends HBoxContainer
 @onready var stat_productivity_progressbar = $Productivity/VBoxContainer/ProgressBar
 @onready var stat_momentum_progressbar = $Momentum/VBoxContainer/ProgressBar
 @onready var coin_label = $Coin/Label
+@onready var stat_wellbeing_progressbar_value = $Wellbeing/VBoxContainer/ProgressBar/Value
+@onready var stat_productivity_progressbar_value = $Productivity/VBoxContainer/ProgressBar/Value
+@onready var stat_momentum_progressbar_value = $Momentum/VBoxContainer/ProgressBar/Value
 
 func _ready():
 	_update_ui()
@@ -12,7 +15,22 @@ func _ready():
 	SaveData.stat_current_momentum_changed.connect(_update_ui)
 
 func _update_ui():
-	stat_wellbeing_progressbar.value = inverse_lerp(Content.stats_initial_value, Content.stats_max_value, float(SaveData.stat_current_wellbeing))
-	stat_productivity_progressbar.value = inverse_lerp(Content.stats_initial_value, Content.stats_max_value, SaveData.stat_current_productivity)
-	stat_momentum_progressbar.value = inverse_lerp(Content.stats_initial_value, Content.stats_max_value, SaveData.stat_current_momentum)
+	stat_wellbeing_progressbar.value = SaveData.stat_current_wellbeing_percentage
+	stat_productivity_progressbar.value = SaveData.stat_current_productivity_percentage
+	stat_momentum_progressbar.value = SaveData.stat_current_momentum_percentage
 	coin_label.text = str(SaveData.coin)
+
+	if SaveData.stat_current_wellbeing_percentage > 1:
+		stat_wellbeing_progressbar_value.text = "JUICED! %d/%d" % [SaveData.stat_current_wellbeing, Content.stats_max_value]
+	else:
+		stat_wellbeing_progressbar_value.text = "%d/%d" % [SaveData.stat_current_wellbeing, Content.stats_max_value]
+
+	if SaveData.stat_current_productivity_percentage > 1:
+		stat_productivity_progressbar_value.text = "JUICED! %d/%d" % [SaveData.stat_current_productivity, Content.stats_max_value]
+	else:
+		stat_productivity_progressbar_value.text = "%d/%d" % [SaveData.stat_current_productivity, Content.stats_max_value]
+
+	if SaveData.stat_current_momentum_percentage > 1:
+		stat_momentum_progressbar_value.text = "JUICED! %d/%d" % [SaveData.stat_current_momentum, Content.stats_max_value]
+	else:
+		stat_momentum_progressbar_value.text = "%d/%d" % [SaveData.stat_current_momentum, Content.stats_max_value]
