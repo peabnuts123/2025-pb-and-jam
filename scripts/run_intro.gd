@@ -1,5 +1,6 @@
 extends Node2D
 
 
-func _on_continue_pressed():
-	get_tree().change_scene_to_file("res://scenes/gameplay/decision_screen.tscn")
+func _ready():
+	await get_tree().create_timer(3).timeout
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="2025-pb-and-jam"
-run/main_scene="uid://ch1arasjga7d5"
+run/main_scene="uid://bb8gpbgfqof8e"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
