@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://xeynhn23otc0"]
+
+[ext_resource type="Script" uid="uid://dwqe1grctj7ci" path="res://scripts/resources/item.gd" id="1_k2ktj"]
+[ext_resource type="Texture2D" uid="uid://ck5kaksotklkw" path="res://assets/items/itchy_sweater.png" id="2_4evnp"]
+
+[resource]
+script = ExtResource("1_k2ktj")
+name = "Pen Cap"
+texture = ExtResource("2_4evnp")
+description = "It's for your favorite pen, but it's probably dried out now and you don't know where it is. Fuck. "
+metadata/_custom_type_script = "uid://dwqe1grctj7ci"
