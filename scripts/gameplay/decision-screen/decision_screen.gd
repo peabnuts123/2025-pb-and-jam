@@ -8,11 +8,11 @@ enum BuffType {
 }
 
 # References
-@onready var item_effect_label = $"CanvasLayer/VBoxContainer/HFlowContainer/Left/Keep Button/ButtonContentsContainer/Effect"
-@onready var item_reward_label = $"CanvasLayer/VBoxContainer/HFlowContainer/Right/Discard Button/ButtonContentsContainer/Reward"
-@onready var item_title_label = $"CanvasLayer/VBoxContainer/HFlowContainer/Middle/Item title"
-@onready var item_image_texture = $CanvasLayer/VBoxContainer/HFlowContainer/Middle/Control/ItemPicture
-@onready var item_description_label = $"CanvasLayer/VBoxContainer/HFlowContainer/Middle/Item description"
+@onready var item_effect_label = $"CanvasLayer/VBoxContainer/ScreenContent/Left/Keep Button/ButtonContentsContainer/Effect"
+@onready var item_reward_label = $"CanvasLayer/VBoxContainer/ScreenContent/Right/Discard Button/ButtonContentsContainer/Reward"
+@onready var item_title_label = $"CanvasLayer/VBoxContainer/ScreenContent/Middle/Item title"
+@onready var item_image_texture = $CanvasLayer/VBoxContainer/ScreenContent/Middle/Control/ItemPicture
+@onready var item_description_label = $"CanvasLayer/VBoxContainer/ScreenContent/Middle/Item description"
 
 # Screen data
 var buff_type: BuffType

@@ -13,6 +13,7 @@ func _ready():
 	_update_ui()
 
 func _on_play_pressed():
+	SaveData.start_new_run()
 	get_tree().change_scene_to_file("res://scenes/gameplay/decision_screen.tscn")
 
 func _on_upgrade_wellbeing():

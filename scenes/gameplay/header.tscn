@@ -1,0 +1,122 @@
+[gd_scene load_steps=6 format=3 uid="uid://b241pdt51n4tj"]
+
+[ext_resource type="Script" uid="uid://sefxm2v25u02" path="res://scripts/gameplay/header.gd" id="1_2ik40"]
+[ext_resource type="Texture2D" uid="uid://bl34k6uvactda" path="res://assets/icons/wellbeing.png" id="1_gtf2i"]
+[ext_resource type="Texture2D" uid="uid://ce5wdximqp7a5" path="res://assets/icons/productivity.png" id="3_8jvka"]
+[ext_resource type="Texture2D" uid="uid://civjik1wwyef" path="res://assets/icons/momentum.png" id="4_julmt"]
+[ext_resource type="Texture2D" uid="uid://rbvjv7bfs2kq" path="res://assets/icons/coin.png" id="5_mw6pd"]
+
+[node name="Header" type="HBoxContainer"]
+theme_override_constants/separation = 20
+alignment = 2
+script = ExtResource("1_2ik40")
+
+[node name="Wellbeing" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Wellbeing"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("1_gtf2i")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Wellbeing"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Wellbeing/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Wellbeing/VBoxContainer"]
+layout_mode = 2
+text = "Wellbeing"
+horizontal_alignment = 1
+
+[node name="Productivity" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Productivity"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("3_8jvka")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Productivity"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Productivity/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Productivity/VBoxContainer"]
+layout_mode = 2
+text = "Productivity"
+horizontal_alignment = 1
+
+[node name="Momentum" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Momentum"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("4_julmt")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Momentum"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Momentum/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Momentum/VBoxContainer"]
+layout_mode = 2
+text = "Momentum"
+horizontal_alignment = 1
+
+[node name="Coin" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Coin"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("5_mw6pd")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Coin"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="_Spacer" type="Control" parent="."]
+layout_mode = 2

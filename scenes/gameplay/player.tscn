@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8yqqg8domque"]
+[gd_scene load_steps=5 format=3 uid="uid://cy0wsgu1v4t1p"]
 
 [ext_resource type="Script" uid="uid://cm40elhpfq188" path="res://scripts/gameplay/bullet-hell/player.gd" id="1_wgl7f"]
-[ext_resource type="PackedScene" uid="uid://c47ha586nflw0" path="res://scenes/gameplay/player_bullet.tscn" id="2_hrnqq"]
+[ext_resource type="PackedScene" path="res://scenes/gameplay/player_bullet.tscn" id="2_hrnqq"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1nupm"]
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bt1neao7v1xcj"]
+[gd_scene load_steps=4 format=3 uid="uid://bt1neao7v1xcj"]
 
 [ext_resource type="Script" uid="uid://cemxu2rexsj0a" path="res://scripts/gameplay/decision-screen/decision_screen.gd" id="1_xr8nw"]
+[ext_resource type="PackedScene" uid="uid://b241pdt51n4tj" path="res://scenes/gameplay/header.tscn" id="2_0aixd"]
 [ext_resource type="Texture2D" uid="uid://ck5kaksotklkw" path="res://assets/items/itchy_sweater.png" id="2_m2abj"]
 
 [node name="decision-screen" type="Node2D"]
@@ -12,20 +13,27 @@ script = ExtResource("1_xr8nw")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="HFlowContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+[node name="Header" parent="CanvasLayer/VBoxContainer" instance=ExtResource("2_0aixd")]
+layout_mode = 2
+
+[node name="ScreenContent" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Left" type="Control" parent="CanvasLayer/VBoxContainer/HFlowContainer"]
+[node name="Left" type="Control" parent="CanvasLayer/VBoxContainer/ScreenContent"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Keep Button" type="Button" parent="CanvasLayer/VBoxContainer/HFlowContainer/Left"]
+[node name="Keep Button" type="Button" parent="CanvasLayer/VBoxContainer/ScreenContent/Left"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,7 +43,7 @@ grow_vertical = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 40
 
-[node name="ButtonContentsContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HFlowContainer/Left/Keep Button"]
+[node name="ButtonContentsContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/ScreenContent/Left/Keep Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,7 +52,7 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HFlowContainer/Left/Keep Button/ButtonContentsContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/ScreenContent/Left/Keep Button/ButtonContentsContainer"]
 custom_minimum_size = Vector2(1, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -52,7 +60,7 @@ text = "It sparks joy"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Effect" type="Label" parent="CanvasLayer/VBoxContainer/HFlowContainer/Left/Keep Button/ButtonContentsContainer"]
+[node name="Effect" type="Label" parent="CanvasLayer/VBoxContainer/ScreenContent/Left/Keep Button/ButtonContentsContainer"]
 custom_minimum_size = Vector2(1, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -60,12 +68,12 @@ text = "<effect>"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Middle" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HFlowContainer"]
+[node name="Middle" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/ScreenContent"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Item title" type="Label" parent="CanvasLayer/VBoxContainer/HFlowContainer/Middle"]
+[node name="Item title" type="Label" parent="CanvasLayer/VBoxContainer/ScreenContent/Middle"]
 custom_minimum_size = Vector2(1, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
@@ -73,14 +81,14 @@ text = "<item title>"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Control" type="CenterContainer" parent="CanvasLayer/VBoxContainer/HFlowContainer/Middle"]
+[node name="Control" type="CenterContainer" parent="CanvasLayer/VBoxContainer/ScreenContent/Middle"]
 layout_mode = 2
 
-[node name="ItemPicture" type="TextureRect" parent="CanvasLayer/VBoxContainer/HFlowContainer/Middle/Control"]
+[node name="ItemPicture" type="TextureRect" parent="CanvasLayer/VBoxContainer/ScreenContent/Middle/Control"]
 layout_mode = 2
 texture = ExtResource("2_m2abj")
 
-[node name="Item description" type="Label" parent="CanvasLayer/VBoxContainer/HFlowContainer/Middle"]
+[node name="Item description" type="Label" parent="CanvasLayer/VBoxContainer/ScreenContent/Middle"]
 custom_minimum_size = Vector2(1, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -88,11 +96,11 @@ text = "<item description>"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Right" type="Control" parent="CanvasLayer/VBoxContainer/HFlowContainer"]
+[node name="Right" type="Control" parent="CanvasLayer/VBoxContainer/ScreenContent"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Discard Button" type="Button" parent="CanvasLayer/VBoxContainer/HFlowContainer/Right"]
+[node name="Discard Button" type="Button" parent="CanvasLayer/VBoxContainer/ScreenContent/Right"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -103,7 +111,7 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 40
 autowrap_mode = 2
 
-[node name="ButtonContentsContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HFlowContainer/Right/Discard Button"]
+[node name="ButtonContentsContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/ScreenContent/Right/Discard Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -112,7 +120,7 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HFlowContainer/Right/Discard Button/ButtonContentsContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/ScreenContent/Right/Discard Button/ButtonContentsContainer"]
 custom_minimum_size = Vector2(1, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -120,7 +128,7 @@ text = "It does not spark joy"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Reward" type="Label" parent="CanvasLayer/VBoxContainer/HFlowContainer/Right/Discard Button/ButtonContentsContainer"]
+[node name="Reward" type="Label" parent="CanvasLayer/VBoxContainer/ScreenContent/Right/Discard Button/ButtonContentsContainer"]
 custom_minimum_size = Vector2(1, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -128,5 +136,5 @@ text = "<reward>"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/HFlowContainer/Left/Keep Button" to="." method="_on_keep_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/HFlowContainer/Right/Discard Button" to="." method="_on_discard_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ScreenContent/Left/Keep Button" to="." method="_on_keep_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ScreenContent/Right/Discard Button" to="." method="_on_discard_pressed"]
