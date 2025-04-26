@@ -1,7 +1,7 @@
 extends Node
 
 # Data
-@export var items: Array[Item];
+var items: Array[Item];
 enum BulletType {
 	default,
 	poison,
@@ -11,23 +11,39 @@ enum BulletType {
 
 # Balance
 # - Economy
-@export var upgrade_cost: int = 5;
-@export var initial_coin: int = 0
-@export var stats_initial_value: int = 10;
-@export var stats_max_value: int = 20;
+var upgrade_cost: int = 5;
+var initial_coin: int = 0
+var stats_initial_value: int = 10;
+var stats_max_value: int = 20;
 # - Item generation
-@export var item_buff_value_range_min: int = 1;
-@export var item_buff_value_range_max: int = 3;
-@export var item_value_range_min: int = 3;
-@export var item_value_range_max: int = 5;
+var item_buff_value_range_min: int = 1;
+var item_buff_value_range_max: int = 3;
+var item_value_range_min: int = 3;
+var item_value_range_max: int = 5;
 # - Bullet hell
-@export var enemy_base_move_speed_per_second = 80
-@export var enemy_bullet_base_move_speed_per_second = 200
-@export var player_base_move_speed_per_second = 200
-@export var player_bullet_base_move_speed_per_second = 450
-@export var boss_move_speed_per_second = 100
-@export var boss_zoom_phase_hold_time_min_seconds = 3
-@export var boss_zoom_phase_hold_time_max_seconds = 8
+var enemy_base_move_speed_per_second: float = 80
+var enemy_bullet_base_move_speed_per_second: float = 200
+var player_bullet_base_move_speed_per_second: float = 450
+var boss_move_speed_per_second: float = 100
+var boss_zoom_phase_hold_time_min_seconds: float = 3
+var boss_zoom_phase_hold_time_max_seconds: float = 8
+# - Damage
+var bullet_type_default_damage: float = 5
+var bullet_type_poison_damage_per_tick: float = 2
+var bullet_type_poison_damage_num_ticks: float = 5
+var bullet_type_slow_damage: float = 5
+var bullet_type_slow_speed_multiplier: float = 0.4
+var bullet_type_slow_duration_seconds: float = 2
+var bullet_type_stun_damage: float = 5
+var bullet_type_stun_duration: float = 1.5
+
+# - Player stats
+var player_health_min: float = 50
+var player_health_max: float = 250
+var player_movement_speed_min: float = 150
+var player_movement_speed_max: float = 600
+var player_fire_rate_per_second_min: float = 2.5
+var player_fire_rate_per_second_max: float = 10
 
 
 func _ready():
