@@ -2,7 +2,7 @@ extends Node
 
 # NOTE: Use signal to allow UI elements to "react" to changes
 signal coin_changed
-var _coin: int = 3
+var _coin: int = 0
 @export var coin: int :
 	get:
 		return _coin
