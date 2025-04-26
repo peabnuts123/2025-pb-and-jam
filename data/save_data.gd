@@ -9,6 +9,8 @@ var coin: int :
 
 var game_over_message: String = "";
 
+var current_run_level: int = 0
+
 # Universal stats i.e. the stats on the main menu
 var stat_base_productivity: int
 var stat_base_wellbeing: int
@@ -49,11 +51,11 @@ var stat_current_momentum_percentage: float:
 
 
 func _ready():
-	start_new_run()
 	stat_base_productivity = Content.stats_initial_value
 	stat_base_wellbeing = Content.stats_initial_value
 	stat_base_momentum = Content.stats_initial_value
 	coin = Content.initial_coin
+	start_new_run()
 
 func start_new_run():
 	game_over_message = ""

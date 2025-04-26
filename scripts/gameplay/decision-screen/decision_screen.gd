@@ -20,6 +20,7 @@ var buff_value: int
 var item_value: int
 
 func _ready():
+	SaveData.current_run_level += 1
 	_generate_item()
 
 func _generate_item():
