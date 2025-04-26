@@ -1,22 +1,53 @@
-[gd_scene load_steps=8 format=3 uid="uid://e3mcb03cfh1x"]
+[gd_scene load_steps=12 format=3 uid="uid://e3mcb03cfh1x"]
 
 [ext_resource type="Script" uid="uid://dh762j2aumbf7" path="res://scripts/gameplay/bullet-hell/bullet.gd" id="1_4wbcd"]
-[ext_resource type="Texture2D" uid="uid://ckplng6cafyuo" path="res://assets/bullet-placeholders/16x16px/01.png" id="1_ihgv0"]
 [ext_resource type="Texture2D" uid="uid://cmwekwdnukro8" path="res://assets/bullet-placeholders/16x16px/02.png" id="2_n6kk2"]
 [ext_resource type="Texture2D" uid="uid://xkun4ycvr0ja" path="res://assets/bullet-placeholders/16x16px/03.png" id="3_x81xd"]
 [ext_resource type="Texture2D" uid="uid://du54nn81h0pwd" path="res://assets/bullet-placeholders/16x16px/05.png" id="4_i7sxd"]
 [ext_resource type="Texture2D" uid="uid://cg2ja56m4ew4e" path="res://assets/bullet-placeholders/16x16px/04.png" id="5_j4j8g"]
+[ext_resource type="Texture2D" uid="uid://qtnsfwbs7bai" path="res://assets/dust-bunny/enemy-bullet.png" id="6_n6kk2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x81xd"]
+atlas = ExtResource("6_n6kk2")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7sxd"]
+atlas = ExtResource("6_n6kk2")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4j8g"]
+atlas = ExtResource("6_n6kk2")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pdv0h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x81xd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7sxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4j8g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ihgv0"]
-radius = 9.05539
+radius = 40.0
 
 [node name="bullet" type="Area2D"]
 collision_layer = 0
 script = ExtResource("1_4wbcd")
 texture_array = Array[Texture2D]([ExtResource("2_n6kk2"), ExtResource("3_x81xd"), ExtResource("4_i7sxd"), ExtResource("5_j4j8g")])
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ihgv0")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_pdv0h")
+frame_progress = 0.0447848
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
