@@ -51,11 +51,11 @@ var stat_current_momentum_percentage: float:
 
 
 func _ready():
-	start_new_run()
 	stat_base_productivity = Content.stats_initial_value
 	stat_base_wellbeing = Content.stats_initial_value
 	stat_base_momentum = Content.stats_initial_value
 	coin = Content.initial_coin
+	start_new_run()
 
 func start_new_run():
 	game_over_message = ""
