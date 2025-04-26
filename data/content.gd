@@ -2,6 +2,12 @@ extends Node
 
 # Data
 @export var items: Array[Item];
+enum BulletType {
+	default,
+	poison,
+	slow,
+	stun,
+}
 
 # Balance
 # - Economy
@@ -19,6 +25,9 @@ extends Node
 @export var enemy_bullet_base_move_speed_per_second = 200
 @export var player_base_move_speed_per_second = 200
 @export var player_bullet_base_move_speed_per_second = 450
+@export var boss_move_speed_per_second = 100
+@export var boss_zoom_phase_hold_time_min_seconds = 3
+@export var boss_zoom_phase_hold_time_max_seconds = 8
 
 
 func _ready():

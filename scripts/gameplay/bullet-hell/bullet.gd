@@ -1,10 +1,7 @@
 extends Area2D
 
-@export var texture_array: Array[Texture2D]
-
-
 var direction = Vector2.RIGHT
-var bullet_type: int = 0
+var bullet_type = Content.BulletType.default
 
 func _physics_process(delta):
 	position += direction * Content.enemy_bullet_base_move_speed_per_second * delta
@@ -14,9 +11,9 @@ func _on_screen_exited():
 	queue_free()
 
 
-func set_property(type):
+func set_property(type: Content.BulletType):
 	bullet_type = type
-	$Sprite2D.texture = texture_array[type]
+	$Sprite.animation = str(Content.BulletType.find_key(bullet_type))
 
 
 # Bullet hell physics

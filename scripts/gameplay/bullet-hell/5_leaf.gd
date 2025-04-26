@@ -3,7 +3,7 @@ extends State
 func enter():
 	super.enter()
 	owner.alpha = 1.3
-	owner.bullet_type = 0
+	owner.bullet_type = Content.BulletType.default
 	speed.start()
 
 func transition():

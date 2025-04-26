@@ -17,15 +17,15 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
 
-func set_status(bullet_type):
+func set_status(bullet_type: Content.BulletType):
 	match bullet_type:
-		0:
+		Content.BulletType.default:
 			fire()
-		1:
+		Content.BulletType.poison:
 			poison()
-		2:
+		Content.BulletType.slow:
 			slow()
-		3:
+		Content.BulletType.stun:
 			stun()
 
 func fire():

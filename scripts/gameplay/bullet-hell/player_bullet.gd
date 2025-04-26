@@ -1,7 +1,6 @@
 extends Area2D
 
 var direction = Vector2.RIGHT
-var bullet_type: int = 0
 
 func _physics_process(delta):
 	position += direction * Content.player_bullet_base_move_speed_per_second * delta

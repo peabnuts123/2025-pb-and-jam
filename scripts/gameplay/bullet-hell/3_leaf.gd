@@ -3,7 +3,7 @@ extends State
 func enter():
 	super.enter()
 	owner.alpha = 2
-	owner.bullet_type = 2
+	owner.bullet_type = Content.BulletType.slow
 
 func transition():
 	if can_transition:

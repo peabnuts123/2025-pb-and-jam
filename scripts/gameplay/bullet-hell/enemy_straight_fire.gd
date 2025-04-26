@@ -2,13 +2,10 @@ extends Node2D
 
 @export var bullet_node: PackedScene
 
-var screen_size: Vector2
 var health = 5
 
-func _ready():
-	screen_size = get_viewport().get_visible_rect().size
-
 func _process(delta):
+	var screen_size = get_viewport().get_visible_rect().size
 	position.y += Content.enemy_base_move_speed_per_second * delta
 	if position.y > screen_size.y + 500:
 		queue_free()
