@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c8i1786p8sctg"]
+
+[ext_resource type="Script" uid="uid://dwqe1grctj7ci" path="res://scripts/resources/item.gd" id="1_qqp84"]
+[ext_resource type="Texture2D" uid="uid://ck5kaksotklkw" path="res://assets/items/itchy_sweater.png" id="2_25h1g"]
+
+[resource]
+script = ExtResource("1_qqp84")
+name = "Baseball Cap"
+texture = ExtResource("2_25h1g")
+description = "It says \"There's no crying in baseball\". Do you even remember the reference? It is in your favourite colour though."
+metadata/_custom_type_script = "uid://dwqe1grctj7ci"

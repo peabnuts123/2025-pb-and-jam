@@ -34,10 +34,10 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 51
 text = " Play "
 
-[node name="Label" type="Label" parent="CanvasLayer/Container"]
+[node name="Game over text" type="Label" parent="CanvasLayer/Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "You died you suck so much!!!!"
+text = "<game over text>"
 horizontal_alignment = 1
 script = ExtResource("2_vjb58")
 
@@ -63,12 +63,12 @@ theme_override_constants/separation = 20
 
 [node name="Coin" type="Label" parent="CanvasLayer/Container/Stats/HBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 text = "Coin"
 
 [node name="Value" type="Label" parent="CanvasLayer/Container/Stats/HBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 text = "0"
 script = ExtResource("3_con2f")
 
@@ -88,8 +88,8 @@ text = "10"
 
 [node name="Button" type="Button" parent="CanvasLayer/Container/Stats/Wellbeing"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 41
-text = " + "
+theme_override_font_sizes/font_size = 30
+text = " +1 (5 coin) "
 
 [node name="Productivity" type="HBoxContainer" parent="CanvasLayer/Container/Stats"]
 layout_mode = 2
@@ -107,8 +107,8 @@ text = "10"
 
 [node name="Button" type="Button" parent="CanvasLayer/Container/Stats/Productivity"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 41
-text = " + "
+theme_override_font_sizes/font_size = 30
+text = " +1 (5 coin) "
 
 [node name="Momentum" type="HBoxContainer" parent="CanvasLayer/Container/Stats"]
 layout_mode = 2
@@ -126,7 +126,10 @@ text = "10"
 
 [node name="Button" type="Button" parent="CanvasLayer/Container/Stats/Momentum"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 41
-text = " + "
+theme_override_font_sizes/font_size = 30
+text = " +1 (5 coin) "
 
 [connection signal="pressed" from="CanvasLayer/Container/Play button" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Container/Stats/Wellbeing/Button" to="." method="_on_upgrade_wellbeing"]
+[connection signal="pressed" from="CanvasLayer/Container/Stats/Productivity/Button" to="." method="_on_upgrade_productivity"]
+[connection signal="pressed" from="CanvasLayer/Container/Stats/Momentum/Button" to="." method="_on_upgrade_momentum"]
