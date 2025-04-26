@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var enemy_prefab: PackedScene
+@export var boss_prefab: PackedScene
 @export var min_spawn_time: float = 0.5  # minimum seconds between spawns
 @export var max_spawn_time: float = 2.0  # maximum seconds between spawns
 
@@ -25,3 +26,9 @@ func spawn_enemy():
 		var next_spawn_time = randf_range(min_spawn_time, max_spawn_time)
 		await get_tree().create_timer(next_spawn_time).timeout
 		spawn_enemy()
+		spawn_count += 1
+	else:
+		var boss = boss_prefab.instantiate()
+		boss.position = Vector2(screen_size.x/2, -50)
+		add_child(boss)
+			

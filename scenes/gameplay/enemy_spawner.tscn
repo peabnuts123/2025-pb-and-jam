@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cy70i38aob22g"]
+[gd_scene load_steps=4 format=3 uid="uid://cy70i38aob22g"]
 
 [ext_resource type="Script" uid="uid://c3j8fcunhlj11" path="res://scripts/gameplay/bullet-hell/enemy_spawner.gd" id="1_h7k6w"]
-[ext_resource type="PackedScene" uid="uid://bgmay0lmgftq4" path="res://scenes/gameplay/enemy-straight-fire.tscn" id="2_pi5kj"]
+[ext_resource type="PackedScene" uid="uid://n66js2ncglv2" path="res://scenes/gameplay/enemy-straight-fire.tscn" id="2_pi5kj"]
+[ext_resource type="PackedScene" uid="uid://bonr8npmg7qyc" path="res://scenes/gameplay/boss.tscn" id="3_5357k"]
 
 [node name="enemy_spawner" type="Area2D"]
 script = ExtResource("1_h7k6w")
 enemy_prefab = ExtResource("2_pi5kj")
+boss_prefab = ExtResource("3_5357k")

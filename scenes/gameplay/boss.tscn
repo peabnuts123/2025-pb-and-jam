@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cjoqbl4ky5eik" path="res://scripts/gameplay/bullet-hell/boss.gd" id="1_fooby"]
 [ext_resource type="PackedScene" uid="uid://e3mcb03cfh1x" path="res://scenes/gameplay/bullet.tscn" id="2_6of3n"]
-[ext_resource type="Script" path="res://scripts/gameplay/bullet-hell/finite_state_machine.gd" id="3_keu4x"]
-[ext_resource type="Script" path="res://scripts/gameplay/bullet-hell/idle.gd" id="4_b3fdw"]
+[ext_resource type="Script" uid="uid://cn3uy77fairjw" path="res://scripts/gameplay/bullet-hell/finite_state_machine.gd" id="3_keu4x"]
+[ext_resource type="Script" uid="uid://d2dd8c68lr73r" path="res://scripts/gameplay/bullet-hell/idle.gd" id="4_b3fdw"]
 [ext_resource type="Script" uid="uid://bnudxubbxcc8o" path="res://scripts/gameplay/bullet-hell/5_leaf.gd" id="5_20b4o"]
 [ext_resource type="Script" uid="uid://b8mxdw66iuaal" path="res://scripts/gameplay/bullet-hell/4_leaf.gd" id="6_fnu1i"]
 [ext_resource type="Script" uid="uid://ckdipvde7gw53" path="res://scripts/gameplay/bullet-hell/3_leaf.gd" id="7_3xo6r"]
