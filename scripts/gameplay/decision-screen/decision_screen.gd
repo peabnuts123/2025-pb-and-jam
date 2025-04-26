@@ -21,16 +21,16 @@ var item_value: int
 
 func _ready():
 	_generate_item()
-	
+
 func _generate_item():
 	# pick random item from data
 	var item = Content.items.pick_random()
-	
+
 	# random stats for item
 	buff_type = BuffType.values().pick_random()
-	buff_value = randi_range(1,3)
-	item_value = randi_range(2,3)
-	
+	buff_value = randi_range(Content.item_buff_value_range_min, Content.item_buff_value_range_max)
+	item_value = randi_range(Content.item_value_range_min, Content.item_value_range_max)
+
 	# bind all the different UI elements to the data
 	item_effect_label.text = "+%d %s" % [buff_value, BuffType.find_key(buff_type)]
 	item_reward_label.text = "+%d coin" % item_value

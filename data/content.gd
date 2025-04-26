@@ -1,10 +1,17 @@
 extends Node
 
+# Data
 @export var items: Array[Item];
+
+# Balance
 @export var upgrade_cost: int = 5;
+@export var initial_coin: int = 0
+@export var item_buff_value_range_min: int = 1;
+@export var item_buff_value_range_max: int = 3;
+@export var item_value_range_min: int = 3;
+@export var item_value_range_max: int = 5;
 @export var stats_initial_value: int = 10;
 @export var stats_max_value: int = 20;
-@export var initial_coin: int = 0
 
 func _ready():
 	items = load_all_item_resources('res://resources/items')
