@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bdgl4ofir66a5"]
+
+[ext_resource type="Script" uid="uid://dwqe1grctj7ci" path="res://scripts/resources/item.gd" id="1_46i2w"]
+[ext_resource type="Texture2D" uid="uid://ck5kaksotklkw" path="res://assets/items/itchy_sweater.png" id="2_3r8vx"]
+
+[resource]
+script = ExtResource("1_46i2w")
+name = "Itchy Sweater"
+texture = ExtResource("2_3r8vx")
+description = "It’s acrylic, but your grandma knitted it."
+metadata/_custom_type_script = "uid://dwqe1grctj7ci"
