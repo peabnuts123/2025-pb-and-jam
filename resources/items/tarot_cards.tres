@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://eribltvs2lfy"]
+
+[ext_resource type="Script" uid="uid://dwqe1grctj7ci" path="res://scripts/resources/item.gd" id="1_shvd4"]
+[ext_resource type="Texture2D" uid="uid://ck5kaksotklkw" path="res://assets/items/itchy_sweater.png" id="2_1je11"]
+
+[resource]
+script = ExtResource("1_shvd4")
+name = "Misc Charger"
+texture = ExtResource("2_1je11")
+description = "What if it’s for something important?"
+metadata/_custom_type_script = "uid://dwqe1grctj7ci"

@@ -7,7 +7,7 @@ extends Node
 
 func _ready():
 	items = load_all_item_resources('res://resources/items')
-	
+
 	for item in items:
 		print("Loaded item '%s'" % item.name)
 
@@ -17,6 +17,10 @@ func load_all_item_resources(folder_path: String) -> Array[Item]:
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
 	while file_name != "":
+		# Hack to fix file names on export. See: https://github.com/godotengine/godot/issues/66014#issuecomment-1501894950
+		if file_name.ends_with(".remap"):
+				file_name = file_name.trim_suffix(".remap")
+
 		if not dir.current_is_dir() and file_name.ends_with(".tres"):
 			var resource_path = folder_path + "/" + file_name
 			var resource = load(resource_path) as Item
