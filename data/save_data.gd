@@ -9,6 +9,8 @@ var coin: int :
 
 var game_over_message: String = "";
 
+var current_run_level: int = 0
+
 # Universal stats i.e. the stats on the main menu
 var stat_base_productivity: int
 var stat_base_wellbeing: int
