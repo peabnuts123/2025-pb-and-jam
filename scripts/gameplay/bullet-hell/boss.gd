@@ -6,6 +6,10 @@ var theta: float = 0.0
 @export var bullet_node: PackedScene
 var bullet_type = Content.BulletType.default
 
+var health = 1:
+	set(value):
+		health = value
+
 enum BehaviourMode {
 	EnteringScreen,
 	Zooming,
@@ -83,3 +87,6 @@ func shoot(angle):
 
 func _on_speed_timeout():
 	shoot(theta)
+
+func die():
+	queue_free()

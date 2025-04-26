@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bonr8npmg7qyc"]
+[gd_scene load_steps=13 format=3 uid="uid://bonr8npmg7qyc"]
 
 [ext_resource type="Script" uid="uid://cjoqbl4ky5eik" path="res://scripts/gameplay/bullet-hell/boss.gd" id="1_fooby"]
 [ext_resource type="PackedScene" uid="uid://e3mcb03cfh1x" path="res://scenes/gameplay/bullet.tscn" id="2_6of3n"]
@@ -8,11 +8,15 @@
 [ext_resource type="Script" uid="uid://b8mxdw66iuaal" path="res://scripts/gameplay/bullet-hell/4_leaf.gd" id="6_fnu1i"]
 [ext_resource type="Script" uid="uid://ckdipvde7gw53" path="res://scripts/gameplay/bullet-hell/3_leaf.gd" id="7_3xo6r"]
 [ext_resource type="Script" uid="uid://bu58k0pips46h" path="res://scripts/gameplay/bullet-hell/2_leaf.gd" id="8_3xo6r"]
+[ext_resource type="Script" uid="uid://bn218nxeveog0" path="res://scripts/gameplay/bullet-hell/enemy-collision.gd" id="9_44eaj"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2gjxj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6of3n"]
 radius = 96.2052
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xo6r"]
+size = Vector2(19.8, 17.8)
 
 [node name="Boss" type="Node2D"]
 scale = Vector2(5, 5)
@@ -69,6 +73,15 @@ script = ExtResource("7_3xo6r")
 [node name="2Leaf" type="Node2D" parent="FiniteStateMachine"]
 scale = Vector2(0.2, 0.2)
 script = ExtResource("8_3xo6r")
+
+[node name="collider" type="Area2D" parent="." groups=["enemy"]]
+collision_layer = 2
+script = ExtResource("9_44eaj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collider"]
+position = Vector2(-0.0999999, 0.300001)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_3xo6r")
 
 [connection signal="timeout" from="Speed" to="." method="_on_speed_timeout"]
 [connection signal="body_entered" from="PlayerDetection" to="FiniteStateMachine/Idle" method="_on_player_entered"]
