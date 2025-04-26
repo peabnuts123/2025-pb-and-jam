@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SaveData="*res://data/save_data.gd"
+Content="*res://data/content.gd"
 
 [display]
 
