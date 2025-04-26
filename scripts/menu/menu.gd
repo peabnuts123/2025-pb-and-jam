@@ -13,7 +13,7 @@ func _ready():
 	_update_ui()
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://scenes/run_intro.tscn")
+	get_tree().change_scene_to_file("res://scenes/gameplay/decision_screen.tscn")
 
 func _on_upgrade_wellbeing():
 	if SaveData.coin >= Content.upgrade_cost and SaveData.stat_base_wellbeing < Content.stats_max_value:
