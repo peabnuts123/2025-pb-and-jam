@@ -1,6 +1,9 @@
 extends Node
 
 @export var items: Array[Item];
+@export var upgrade_cost: int = 5;
+@export var stats_initial_value: int = 10;
+@export var stats_max_value: int = 12;
 
 func _ready():
 	items = load_all_item_resources('res://resources/items')
