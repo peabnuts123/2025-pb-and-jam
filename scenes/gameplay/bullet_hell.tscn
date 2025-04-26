@@ -4,16 +4,10 @@
 [ext_resource type="Script" uid="uid://boai62rv84x88" path="res://scripts/gameplay/bullet-hell/bullet_hell.gd" id="1_86dn8"]
 [ext_resource type="PackedScene" uid="uid://bonr8npmg7qyc" path="res://scenes/gameplay/boss.tscn" id="3_cdxiu"]
 [ext_resource type="PackedScene" uid="uid://b8yqqg8domque" path="res://scenes/gameplay/player.tscn" id="4_fav26"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ey8vg"]
+[ext_resource type="PackedScene" uid="uid://bgmay0lmgftq4" path="res://scenes/gameplay/enemy-straight-fire.tscn" id="5_gq4co"]
 
 [node name="BulletHell" type="Node2D"]
 script = ExtResource("1_86dn8")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("CapsuleShape2D_ey8vg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -49,5 +43,8 @@ position = Vector2(649, 175)
 
 [node name="player" parent="." instance=ExtResource("4_fav26")]
 position = Vector2(250, 408)
+
+[node name="enemy" parent="." instance=ExtResource("5_gq4co")]
+position = Vector2(103, 85)
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/KYS" to="." method="_on_kys_pressed"]

@@ -14,7 +14,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_6of3n"]
 radius = 96.2052
 
-[node name="Boss" type="CharacterBody2D"]
+[node name="Boss" type="Node2D"]
 scale = Vector2(5, 5)
 script = ExtResource("1_fooby")
 alpha = 2.83
