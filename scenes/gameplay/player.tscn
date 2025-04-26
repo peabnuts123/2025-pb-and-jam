@@ -39,3 +39,9 @@ offset_top = -43.0
 offset_right = 100.0
 offset_bottom = -16.0
 value = 100.0
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_fire"]

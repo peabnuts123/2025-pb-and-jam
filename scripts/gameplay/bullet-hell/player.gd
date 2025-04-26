@@ -5,17 +5,24 @@ extends CharacterBody2D
 var speed_multiplier = 1
 @onready var debug = $debug
 @onready var progress_bar = $ProgressBar
+@onready var shoot_timer = $ShootTimer
 
 var health = 100:
 	set(value):
 		health = value
 		progress_bar.value = value
 
+var can_shoot = true
+
+func _process(_delta):
+	if can_shoot and Input.is_action_pressed("shoot"):
+		shoot()
+
+
 func _physics_process(_delta):
 	velocity = Input.get_vector("ui_left", "ui_right", "ui_up","ui_down") * speed_multiplier * Content.player_base_move_speed_per_second
 	move_and_slide()
-	if Input.is_action_just_pressed("shoot"):
-		shoot()
+
 
 func set_status(bullet_type: Content.BulletType):
 	match bullet_type:
@@ -50,6 +57,9 @@ func stun():
 
 
 func shoot():
+	shoot_timer.start(0) # Reset shoot timer to 0
+	can_shoot = false # Disable shooting until next timer
+
 	var bullet = bullet_node.instantiate()
 
 	bullet.direction = Vector2.UP
@@ -57,3 +67,7 @@ func shoot():
 
 
 	get_tree().current_scene.call_deferred("add_child", bullet)
+
+
+func _on_shoot_timer_fire():
+	can_shoot = true

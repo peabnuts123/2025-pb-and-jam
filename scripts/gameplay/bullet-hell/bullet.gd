@@ -3,6 +3,10 @@ extends Area2D
 var direction = Vector2.RIGHT
 var bullet_type = Content.BulletType.default
 
+
+func _ready():
+	$Sprite.animation = str(Content.BulletType.find_key(bullet_type))
+
 func _physics_process(delta):
 	position += direction * Content.enemy_bullet_base_move_speed_per_second * delta
 

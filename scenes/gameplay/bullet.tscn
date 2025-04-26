@@ -81,7 +81,6 @@ script = ExtResource("1_4wbcd")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_n6kk2")
-animation = &"stun"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
