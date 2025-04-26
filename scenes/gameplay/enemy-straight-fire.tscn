@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/gameplay/bullet-hell/enemy-collision.gd" id="3_o2v8w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6ydr"]
-size = Vector2(100, 130)
+size = Vector2(80, 104)
 
 [node name="enemy" type="Node2D"]
 script = ExtResource("1_4kluw")
@@ -14,18 +14,19 @@ bullet_node = ExtResource("2_c6ydr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0.729412, 0.909804, 0.254902, 1)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_ea33s")
 
 [node name="Speed" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
 
-[node name="Collision" type="Area2D" parent="."]
+[node name="Collision" type="Area2D" parent="." groups=["enemy"]]
 collision_layer = 2
 script = ExtResource("3_o2v8w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
-position = Vector2(0, 10)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_c6ydr")
 
 [connection signal="timeout" from="Speed" to="." method="shoot"]

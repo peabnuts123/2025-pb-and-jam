@@ -1,24 +1,25 @@
 [gd_scene load_steps=5 format=3 uid="uid://cy0wsgu1v4t1p"]
 
 [ext_resource type="Script" uid="uid://cm40elhpfq188" path="res://scripts/gameplay/bullet-hell/player.gd" id="1_wgl7f"]
-[ext_resource type="PackedScene" path="res://scenes/gameplay/player_bullet.tscn" id="2_hrnqq"]
+[ext_resource type="PackedScene" uid="uid://bli4el2h0500q" path="res://scenes/gameplay/player_bullet.tscn" id="2_hrnqq"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1nupm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrnqq"]
 size = Vector2(10, 10)
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 2
 script = ExtResource("1_wgl7f")
 bullet_node = ExtResource("2_hrnqq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0.435294, 0.741176, 1, 1)
-scale = Vector2(10, 10)
+scale = Vector2(50, 50)
 texture = SubResource("PlaceholderTexture2D_1nupm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_hrnqq")
 
 [node name="debug" type="Label" parent="."]

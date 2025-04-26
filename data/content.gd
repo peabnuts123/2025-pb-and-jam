@@ -4,14 +4,22 @@ extends Node
 @export var items: Array[Item];
 
 # Balance
+# - Economy
 @export var upgrade_cost: int = 5;
 @export var initial_coin: int = 0
+@export var stats_initial_value: int = 10;
+@export var stats_max_value: int = 20;
+# - Item generation
 @export var item_buff_value_range_min: int = 1;
 @export var item_buff_value_range_max: int = 3;
 @export var item_value_range_min: int = 3;
 @export var item_value_range_max: int = 5;
-@export var stats_initial_value: int = 10;
-@export var stats_max_value: int = 20;
+# - Bullet hell
+@export var enemy_base_move_speed_per_second = 80
+@export var enemy_bullet_base_move_speed_per_second = 200
+@export var player_base_move_speed_per_second = 200
+@export var player_bullet_base_move_speed_per_second = 450
+
 
 func _ready():
 	items = load_all_item_resources('res://resources/items')

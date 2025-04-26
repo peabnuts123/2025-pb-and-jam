@@ -1,19 +1,50 @@
-[gd_scene load_steps=4 format=3 uid="uid://c47ha586nflw0"]
+[gd_scene load_steps=8 format=3 uid="uid://bli4el2h0500q"]
 
 [ext_resource type="Script" uid="uid://ctb2eu65lyy04" path="res://scripts/gameplay/bullet-hell/player_bullet.gd" id="1_djmgg"]
-[ext_resource type="Texture2D" uid="uid://rxpqtrsuaekk" path="res://assets/bullet-placeholders/16x16px/15.png" id="1_v0ihg"]
+[ext_resource type="Texture2D" uid="uid://qtnsfwbs7bai" path="res://assets/dust-bunny/enemy-bullet.png" id="2_djmgg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_djmgg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1taw"]
+atlas = ExtResource("2_djmgg")
+region = Rect2(0, 0, 200, 200)
 
-[node name="player-bullet" type="Area2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju8ng"]
+atlas = ExtResource("2_djmgg")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7iol"]
+atlas = ExtResource("2_djmgg")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_27t5f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1taw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju8ng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7iol")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_djmgg"]
+radius = 20.0
+
+[node name="player-bullet" type="Area2D" groups=["player_bullet"]]
 collision_mask = 2
 script = ExtResource("1_djmgg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_v0ihg")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_27t5f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_djmgg")
+shape = SubResource("CircleShape2D_djmgg")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 

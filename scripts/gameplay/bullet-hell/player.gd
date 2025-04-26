@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var bullet_node: PackedScene
 
-var speed = 250
+var speed_multiplier = 1
 @onready var debug = $debug
 @onready var progress_bar = $ProgressBar
 
@@ -12,7 +12,7 @@ var health = 100:
 		progress_bar.value = value
 
 func _physics_process(_delta):
-	velocity = Input.get_vector("ui_left", "ui_right", "ui_up","ui_down") * speed
+	velocity = Input.get_vector("ui_left", "ui_right", "ui_up","ui_down") * speed_multiplier * Content.player_base_move_speed_per_second
 	move_and_slide()
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
@@ -31,7 +31,7 @@ func set_status(bullet_type):
 func fire():
 	debug.text = "fire"
 	health -= 10
-	
+
 func poison():
 	debug.text = "poison"
 	for i in range(5):
@@ -40,21 +40,20 @@ func poison():
 
 func slow():
 	debug.text = "slow"
-	speed = 50
-	
+	speed_multiplier = 0.4
+
 func stun():
 	debug.text = "stun"
-	speed = 0
+	speed_multiplier = 0
 	await get_tree().create_timer(2.5).timeout
-	speed = 250
-	
-	
+	speed_multiplier = 1
+
+
 func shoot():
 	var bullet = bullet_node.instantiate()
-	
-	bullet.position = global_position
+
 	bullet.direction = Vector2.UP
-	
+	bullet.position = global_position + (bullet.direction * 50)
+
+
 	get_tree().current_scene.call_deferred("add_child", bullet)
-	
-	
