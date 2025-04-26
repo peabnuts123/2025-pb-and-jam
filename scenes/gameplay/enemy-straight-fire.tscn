@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgmay0lmgftq4"]
+[gd_scene load_steps=6 format=3 uid="uid://bgmay0lmgftq4"]
 
 [ext_resource type="Script" uid="uid://8st5npkat11p" path="res://scripts/gameplay/bullet-hell/enemy_straight_fire.gd" id="1_4kluw"]
 [ext_resource type="PackedScene" uid="uid://e3mcb03cfh1x" path="res://scenes/gameplay/bullet.tscn" id="2_c6ydr"]
+[ext_resource type="Script" uid="uid://bn218nxeveog0" path="res://scripts/gameplay/bullet-hell/enemy-collision.gd" id="3_o2v8w"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_r4mnt"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_c6ydr"]
-radius = 49.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6ydr"]
+size = Vector2(10, 10)
 
 [node name="enemy" type="Node2D"]
 script = ExtResource("1_4kluw")
@@ -20,9 +21,11 @@ texture = SubResource("PlaceholderTexture2D_r4mnt")
 [node name="Speed" type="Timer" parent="."]
 autostart = true
 
-[node name="PlayerDetection" type="Area2D" parent="."]
+[node name="Collision" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("3_o2v8w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-shape = SubResource("CircleShape2D_c6ydr")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
+shape = SubResource("RectangleShape2D_c6ydr")
 
 [connection signal="timeout" from="Speed" to="." method="shoot"]

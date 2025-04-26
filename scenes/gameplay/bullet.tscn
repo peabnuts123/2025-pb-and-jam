@@ -11,6 +11,7 @@
 radius = 9.05539
 
 [node name="bullet" type="Area2D"]
+collision_layer = 0
 script = ExtResource("1_4wbcd")
 texture_array = Array[Texture2D]([ExtResource("2_n6kk2"), ExtResource("3_x81xd"), ExtResource("4_i7sxd"), ExtResource("5_j4j8g")])
 
