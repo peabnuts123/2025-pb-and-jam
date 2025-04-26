@@ -20,7 +20,7 @@ func shoot():
 	
 	bullet.position = global_position
 	bullet.direction = Vector2.DOWN
-	#bullet.set_property(bullet_type)
+ 	#bullet.set_property()
 	
 	get_tree().current_scene.call_deferred("add_child", bullet)
 	
