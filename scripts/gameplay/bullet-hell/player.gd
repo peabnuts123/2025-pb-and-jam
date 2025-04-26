@@ -54,7 +54,6 @@ func shoot():
 	
 	bullet.position = global_position
 	bullet.direction = Vector2.UP
-	#bullet.set_property(bullet_type)
 	
 	get_tree().current_scene.call_deferred("add_child", bullet)
 	

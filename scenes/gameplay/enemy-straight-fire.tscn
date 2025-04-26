@@ -19,6 +19,7 @@ scale = Vector2(10, 10)
 texture = SubResource("PlaceholderTexture2D_r4mnt")
 
 [node name="Speed" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="Collision" type="Area2D" parent="."]
