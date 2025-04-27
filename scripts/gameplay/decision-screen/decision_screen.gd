@@ -13,6 +13,8 @@ enum BuffType {
 @onready var item_title_label = $"CanvasLayer/VBoxContainer/ScreenContent/Middle/Item title"
 @onready var item_image_texture = $CanvasLayer/VBoxContainer/ScreenContent/Middle/Control/ItemPicture
 @onready var item_description_label = $"CanvasLayer/VBoxContainer/ScreenContent/Middle/Item description"
+@onready var keep_sound = $KeepSound
+@onready var discard_sound = $DiscardSound
 
 # Screen data
 var buff_type: BuffType
@@ -49,10 +51,14 @@ func _on_keep_pressed():
 			SaveData.stat_current_momentum += buff_value
 	print("Current stats: %sW %sP %sM" % [SaveData.stat_current_wellbeing, SaveData.stat_current_productivity, SaveData.stat_current_momentum])
 	print("@TODO trigger keep animation")
+	keep_sound.play()
+	await get_tree().create_timer(0.7).timeout
 	get_tree().change_scene_to_file("res://scenes/gameplay/bullet_hell.tscn")
 
 func _on_discard_pressed():
 	SaveData.coin += item_value
 	print("Current coin: %s" % SaveData.coin)
 	print("@TODO trigger discard animation")
+	discard_sound.play()
+	await get_tree().create_timer(0.7).timeout
 	get_tree().change_scene_to_file("res://scenes/gameplay/bullet_hell.tscn")

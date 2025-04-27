@@ -10,13 +10,15 @@ extends Node2D
 @onready var momentum_upgrade_button = $CanvasLayer/Container/Stats/Momentum/Button
 
 @onready var game_over_music = $GameOverMusic
+@onready var you_do_not_spark_joy_sound = $YOUDONOTSPARKJOY
 @onready var normal_music = $NormalMusic
 @onready var spend_coin_sound = $SpendCoin
 
 func _ready():
 	_update_ui()
 	if not SaveData.game_over_message.is_empty():
-		game_over_music.play()
+		game_over_music.play(6)
+		you_do_not_spark_joy_sound.play()
 	else:
 		normal_music.play()
 
