@@ -112,10 +112,10 @@ func shoot(angle):
 
 func _on_speed_timeout():
 	shoot(theta)
-	
+
 
 func die():
 	died.emit()
-	queue_free() 
-	
-	
+	queue_free()
+
+

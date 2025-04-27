@@ -70,10 +70,9 @@ theme_override_font_sizes/font_size = 30
 text = "Die (debug)"
 
 [node name="enemy_spawner" parent="." instance=ExtResource("6_gqdqa")]
-position = Vector2(387, -147)
 
 [node name="player" parent="." instance=ExtResource("4_fav26")]
-position = Vector2(250, 408)
+position = Vector2(646, 562)
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_sylgr")
