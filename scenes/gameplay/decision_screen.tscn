@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bt1neao7v1xcj"]
+[gd_scene load_steps=16 format=3 uid="uid://bt1neao7v1xcj"]
 
 [ext_resource type="Script" uid="uid://cemxu2rexsj0a" path="res://scripts/gameplay/decision-screen/decision_screen.gd" id="1_xr8nw"]
 [ext_resource type="PackedScene" uid="uid://b241pdt51n4tj" path="res://scenes/gameplay/header.tscn" id="2_0aixd"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://ck5kaksotklkw" path="res://assets/items/itchy_sweater.png" id="2_m2abj"]
 [ext_resource type="Texture2D" uid="uid://ds2hkocqy3w10" path="res://assets/player/player_hands.png" id="3_dih7f"]
 [ext_resource type="Theme" uid="uid://b6ant41uglamm" path="res://resources/theme.tres" id="4_0pbpm"]
+[ext_resource type="AudioStream" uid="uid://dmhxq3ikljcfm" path="res://assets/audio/decision-music.wav" id="7_8a0i8"]
+[ext_resource type="AudioStream" uid="uid://cfot1o4wfu4cy" path="res://assets/audio/GetBuff.wav" id="8_8a0i8"]
+[ext_resource type="AudioStream" uid="uid://b5el5hibuq61i" path="res://assets/audio/GetCoins.wav" id="9_cniq0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isfba"]
 bg_color = Color(0, 0, 0, 0.113725)
@@ -219,6 +222,18 @@ theme_override_font_sizes/font_size = 25
 text = "<reward>"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_8a0i8")
+autoplay = true
+
+[node name="KeepSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_8a0i8")
+volume_db = 20.0
+
+[node name="DiscardSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_cniq0")
+volume_db = 20.0
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/ScreenContent/Left/Keep Button" to="." method="_on_keep_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/ScreenContent/Right/Discard Button" to="." method="_on_discard_pressed"]

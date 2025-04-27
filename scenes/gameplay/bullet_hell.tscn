@@ -1,15 +1,41 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlfx5ga1xldxk"]
+[gd_scene load_steps=8 format=3 uid="uid://dlfx5ga1xldxk"]
 
 [ext_resource type="Script" uid="uid://6tecvr0c0gn5" path="res://scripts/gameplay/bullet-hell/debug_timer.gd" id="1_3hdpf"]
 [ext_resource type="Script" uid="uid://boai62rv84x88" path="res://scripts/gameplay/bullet-hell/bullet_hell.gd" id="1_86dn8"]
 [ext_resource type="PackedScene" uid="uid://b241pdt51n4tj" path="res://scenes/gameplay/header.tscn" id="2_gq4co"]
+[ext_resource type="Texture2D" uid="uid://cc36pyawgg224" path="res://assets/backgrounds/bullet-hell.png" id="2_sylgr"]
 [ext_resource type="PackedScene" uid="uid://cy0wsgu1v4t1p" path="res://scenes/gameplay/player.tscn" id="4_fav26"]
 [ext_resource type="PackedScene" uid="uid://cy70i38aob22g" path="res://scenes/gameplay/enemy_spawner.tscn" id="6_gqdqa"]
+[ext_resource type="AudioStream" uid="uid://bqho4bcebcume" path="res://assets/audio/battle-music.wav" id="6_sylgr"]
 
 [node name="BulletHell" type="Node2D"]
 script = ExtResource("1_86dn8")
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="CanvasLayer2"]
+modulate = Color(1, 1, 1, 0.458824)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -280.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sylgr")
+stretch_mode = 6
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 15
@@ -43,11 +69,16 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
 text = "Die (debug)"
 
+[node name="enemy_spawner" parent="." instance=ExtResource("6_gqdqa")]
+position = Vector2(387, -147)
+
 [node name="player" parent="." instance=ExtResource("4_fav26")]
 position = Vector2(250, 408)
 
-[node name="enemy_spawner" parent="." instance=ExtResource("6_gqdqa")]
-position = Vector2(387, -147)
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_sylgr")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/ScreenContent/KYS" to="." method="_on_kys_pressed"]
 [connection signal="boss_died" from="enemy_spawner" to="." method="on_boss_die"]

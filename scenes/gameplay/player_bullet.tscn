@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bli4el2h0500q"]
+[gd_scene load_steps=7 format=3 uid="uid://bli4el2h0500q"]
 
 [ext_resource type="Script" uid="uid://ctb2eu65lyy04" path="res://scripts/gameplay/bullet-hell/player_bullet.gd" id="1_djmgg"]
 [ext_resource type="Texture2D" uid="uid://mretuw13s34y" path="res://assets/player/player_attack.png" id="2_djmgg"]
+[ext_resource type="AudioStream" uid="uid://dgox8uhxlpm8d" path="res://assets/audio/ShootBullet.wav" id="3_e1taw"]
+[ext_resource type="AudioStream" uid="uid://dy8q6tcdfxyck" path="res://assets/audio/BulletImpact.mp3" id="4_ju8ng"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_27t5f"]
 animations = [{
@@ -29,6 +31,13 @@ sprite_frames = SubResource("SpriteFrames_27t5f")
 shape = SubResource("CircleShape2D_djmgg")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_e1taw")
+volume_db = 10.0
+
+[node name="PopSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ju8ng")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
