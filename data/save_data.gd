@@ -62,3 +62,4 @@ func start_new_run():
 	stat_current_productivity = stat_base_productivity
 	stat_current_wellbeing = stat_base_wellbeing
 	stat_current_momentum = stat_base_momentum
+	current_run_level = 0
