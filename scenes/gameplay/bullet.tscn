@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://e3mcb03cfh1x"]
+[gd_scene load_steps=15 format=3 uid="uid://e3mcb03cfh1x"]
 
 [ext_resource type="Script" uid="uid://dh762j2aumbf7" path="res://scripts/gameplay/bullet-hell/bullet.gd" id="1_4wbcd"]
 [ext_resource type="Texture2D" uid="uid://xkun4ycvr0ja" path="res://assets/bullet-placeholders/16x16px/03.png" id="3_x81xd"]
 [ext_resource type="Texture2D" uid="uid://du54nn81h0pwd" path="res://assets/bullet-placeholders/16x16px/05.png" id="4_i7sxd"]
 [ext_resource type="Texture2D" uid="uid://cg2ja56m4ew4e" path="res://assets/bullet-placeholders/16x16px/04.png" id="5_j4j8g"]
 [ext_resource type="Texture2D" uid="uid://qtnsfwbs7bai" path="res://assets/dust-bunny/enemy-bullet.png" id="6_n6kk2"]
+[ext_resource type="AudioStream" uid="uid://b8pe7dtqkfb11" path="res://assets/audio/enemy-shoot.wav" id="6_x81xd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x81xd"]
 atlas = ExtResource("6_n6kk2")
@@ -87,6 +88,11 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ihgv0")
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_x81xd")
+volume_db = 5.0
+pitch_scale = 0.9
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
