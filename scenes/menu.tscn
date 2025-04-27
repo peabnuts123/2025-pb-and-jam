@@ -12,7 +12,6 @@ script = ExtResource("1_vjb58")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Background" type="TextureRect" parent="CanvasLayer"]
-modulate = Color(1, 1, 1, 0.501961)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -65,13 +64,15 @@ layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Container/Stats"]
 layout_mode = 2
+theme_override_constants/separation = 30
 
 [node name="Title" type="Label" parent="CanvasLayer/Container/Stats/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_vertical = 8
 theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 50
 text = "Stats"
+vertical_alignment = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Container/Stats/HBoxContainer"]
 layout_mode = 2
@@ -82,6 +83,7 @@ layout_mode = 2
 theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 30
 text = "Coin"
+vertical_alignment = 1
 
 [node name="Value" type="Label" parent="CanvasLayer/Container/Stats/HBoxContainer/HBoxContainer"]
 layout_mode = 2

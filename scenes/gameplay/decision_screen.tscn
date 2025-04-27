@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bt1neao7v1xcj"]
+[gd_scene load_steps=13 format=3 uid="uid://bt1neao7v1xcj"]
 
 [ext_resource type="Script" uid="uid://cemxu2rexsj0a" path="res://scripts/gameplay/decision-screen/decision_screen.gd" id="1_xr8nw"]
 [ext_resource type="PackedScene" uid="uid://b241pdt51n4tj" path="res://scenes/gameplay/header.tscn" id="2_0aixd"]
 [ext_resource type="Texture2D" uid="uid://k32ylok1icts" path="res://assets/backgrounds/lounge.png" id="2_0pbpm"]
 [ext_resource type="Texture2D" uid="uid://ck5kaksotklkw" path="res://assets/items/itchy_sweater.png" id="2_m2abj"]
+[ext_resource type="Texture2D" uid="uid://ds2hkocqy3w10" path="res://assets/player/player_hands.png" id="3_dih7f"]
 [ext_resource type="Theme" uid="uid://blhaw65fe4nko" path="res://resources/theme.tres" id="4_0pbpm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isfba"]
@@ -50,7 +51,6 @@ script = ExtResource("1_xr8nw")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Background" type="TextureRect" parent="CanvasLayer"]
-modulate = Color(1, 1, 1, 0.152941)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -58,6 +58,28 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_0pbpm")
 stretch_mode = 6
+
+[node name="Hands" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.569
+anchor_right = 0.9
+anchor_bottom = 1.0
+offset_top = 40.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_dih7f")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Wash" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.454902)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 15
