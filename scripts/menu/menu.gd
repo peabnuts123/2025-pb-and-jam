@@ -9,8 +9,13 @@ extends Node2D
 @onready var productivity_upgrade_button = $CanvasLayer/Container/Stats/Productivity/Button
 @onready var momentum_upgrade_button = $CanvasLayer/Container/Stats/Momentum/Button
 
+@onready var game_over_music = $CanvasLayer/GameOverMusic
+
 func _ready():
 	_update_ui()
+	if not SaveData.game_over_message.is_empty():
+		game_over_music.play()
+	#else @TODO
 
 func _on_play_pressed():
 	SaveData.start_new_run()
