@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d0qynqmhl8px2"]
+
+[ext_resource type="Script" uid="uid://dwqe1grctj7ci" path="res://scripts/resources/item.gd" id="1_jhpmc"]
+[ext_resource type="Texture2D" uid="uid://dy3aj32ocr6cp" path="res://assets/items/inscrutable_lewd_item.png" id="2_jhpmc"]
+
+[resource]
+script = ExtResource("1_jhpmc")
+name = "Inscrutable Lewd Item"
+texture = ExtResource("2_jhpmc")
+description = "You don't remember how to use this anymore"
+metadata/_custom_type_script = "uid://dwqe1grctj7ci"
