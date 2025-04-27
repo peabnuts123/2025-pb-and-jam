@@ -4,8 +4,10 @@ signal died
 
 var theta: float = 0.0
 @export_range(0,2*PI) var alpha: float = 0.0
-
+@export var marie_textures: Array[Texture]
 @export var bullet_node: PackedScene
+
+@onready var sprite = $Sprite2D
 
 var health = 5:
 	set(value):
@@ -26,6 +28,10 @@ enum ZoomBehaviourSubPhase {
 
 var zooming_behaviour_move_target: Vector2
 var zooming_behaviour_current_phase = ZoomBehaviourSubPhase.Ready
+
+func _ready():
+	# @NOTE `current_run_level` is 1-based
+	sprite.texture = marie_textures[clamp(SaveData.current_run_level - 1, 0, marie_textures.size())]
 
 func _process(delta):
 	match current_behaviour:
@@ -117,5 +123,3 @@ func _on_speed_timeout():
 func die():
 	died.emit()
 	queue_free()
-
-

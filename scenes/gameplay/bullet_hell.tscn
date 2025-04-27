@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://dlfx5ga1xldxk"]
+[gd_scene load_steps=7 format=3 uid="uid://dlfx5ga1xldxk"]
 
-[ext_resource type="Script" uid="uid://6tecvr0c0gn5" path="res://scripts/gameplay/bullet-hell/debug_timer.gd" id="1_3hdpf"]
 [ext_resource type="Script" uid="uid://boai62rv84x88" path="res://scripts/gameplay/bullet-hell/bullet_hell.gd" id="1_86dn8"]
 [ext_resource type="PackedScene" uid="uid://b241pdt51n4tj" path="res://scenes/gameplay/header.tscn" id="2_gq4co"]
 [ext_resource type="Texture2D" uid="uid://cc36pyawgg224" path="res://assets/backgrounds/bullet-hell.png" id="2_sylgr"]
@@ -51,24 +50,6 @@ grow_vertical = 2
 [node name="Header" parent="CanvasLayer/VBoxContainer" instance=ExtResource("2_gq4co")]
 layout_mode = 2
 
-[node name="ScreenContent" type="VBoxContainer" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-alignment = 1
-
-[node name="debug_timer" type="Label" parent="CanvasLayer/VBoxContainer/ScreenContent"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "5"
-horizontal_alignment = 1
-script = ExtResource("1_3hdpf")
-
-[node name="KYS" type="Button" parent="CanvasLayer/VBoxContainer/ScreenContent"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 30
-text = "Die (debug)"
-
 [node name="enemy_spawner" parent="." instance=ExtResource("6_gqdqa")]
 
 [node name="player" parent="." instance=ExtResource("4_fav26")]
@@ -79,5 +60,4 @@ stream = ExtResource("6_sylgr")
 volume_db = -10.0
 autoplay = true
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/ScreenContent/KYS" to="." method="_on_kys_pressed"]
 [connection signal="boss_died" from="enemy_spawner" to="." method="on_boss_die"]
