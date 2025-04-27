@@ -11,6 +11,8 @@ var health = 100:
 	set(value):
 		health = value
 		progress_bar.value = value
+		if health <= 0:
+			die()
 
 var movement_speed_per_second: float;
 
@@ -58,26 +60,28 @@ func set_status(bullet_type: Content.BulletType):
 
 func fire():
 	debug.text = "fire"
-	health -= 10
-	if health <= 0:
-		die()
+	health -= Content.bullet_type_default_damage
+
 
 func poison():
 	debug.text = "poison"
-	for i in range(5):
-		health -= 2
+	for i in range(Content.bullet_type_poison_damage_num_ticks):
+		health -= Content.bullet_type_poison_damage_per_tick
 		await get_tree().create_timer(1).timeout
-	if health <=0:
-		die()
+
 
 func slow():
 	debug.text = "slow"
-	speed_multiplier = 0.4
+	health -= Content.bullet_type_slow_damage
+	speed_multiplier = Content.bullet_type_slow_speed_multiplier
+	await get_tree().create_timer(Content.bullet_type_slow_duration_seconds).timeout
+	speed_multiplier = 1
 
 func stun():
 	debug.text = "stun"
+	health -= Content.bullet_type_stun_damage
 	speed_multiplier = 0
-	await get_tree().create_timer(2.5).timeout
+	await get_tree().create_timer(Content.bullet_type_stun_duration).timeout
 	speed_multiplier = 1
 
 
@@ -96,7 +100,7 @@ func shoot():
 
 func _on_shoot_timer_fire():
 	can_shoot = true
-	
+
 
 func die():
 	SaveData.game_over_message = "You died!!!!"
