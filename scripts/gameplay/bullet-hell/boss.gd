@@ -4,7 +4,6 @@ var theta: float = 0.0
 @export_range(0,2*PI) var alpha: float = 0.0
 
 @export var bullet_node: PackedScene
-var bullet_type = Content.BulletType.default
 
 var health = 50:
 	set(value):
@@ -64,7 +63,7 @@ func _process_zooming_behaviour():
 
 	# 3. Wait there for a while
 	zooming_behaviour_current_phase = ZoomBehaviourSubPhase.Waiting
-	var wait_time_seconds = randi_range(Content.boss_zoom_phase_hold_time_min_seconds, Content.boss_zoom_phase_hold_time_max_seconds)
+	var wait_time_seconds = randf_range(Content.boss_zoom_phase_hold_time_min_seconds, Content.boss_zoom_phase_hold_time_max_seconds)
 	await get_tree().create_timer(wait_time_seconds).timeout
 
 	# Mark zoom behaviour as ready again
@@ -80,6 +79,17 @@ func shoot(angle):
 
 	bullet.position = global_position
 	bullet.direction = get_vector(angle)
+	var bullet_type: Content.BulletType
+	var dice_roll = randf()
+	if dice_roll < Content.rare_bullet_type_chance_per_type:
+		bullet_type = Content.BulletType.poison
+	elif dice_roll < Content.rare_bullet_type_chance_per_type * 2:
+		bullet_type = Content.BulletType.slow
+	elif dice_roll < Content.rare_bullet_type_chance_per_type * 3:
+		bullet_type = Content.BulletType.stun
+	else:
+		bullet_type = Content.BulletType.default
+
 	bullet.set_property(bullet_type)
 
 	get_tree().current_scene.call_deferred("add_child", bullet)

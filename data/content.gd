@@ -13,8 +13,8 @@ enum BulletType {
 # - Economy
 var upgrade_cost: int = 5;
 var initial_coin: int = 0
-var stats_initial_value: int = 10;
-var stats_max_value: int = 20;
+var stats_initial_value: int = 0;
+var stats_max_value: int = 10;
 # - Item generation
 var item_buff_value_range_min: int = 1;
 var item_buff_value_range_max: int = 3;
@@ -27,6 +27,7 @@ var player_bullet_base_move_speed_per_second: float = 450
 var boss_move_speed_per_second: float = 100
 var boss_zoom_phase_hold_time_min_seconds: float = 3
 var boss_zoom_phase_hold_time_max_seconds: float = 8
+var rare_bullet_type_chance_per_type: float = 0.05
 # - Damage
 var bullet_type_default_damage: float = 5
 var bullet_type_poison_damage_per_tick: float = 2

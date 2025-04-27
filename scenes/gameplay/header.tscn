@@ -1,10 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://b241pdt51n4tj"]
+[gd_scene load_steps=10 format=3 uid="uid://b241pdt51n4tj"]
 
 [ext_resource type="Script" uid="uid://sefxm2v25u02" path="res://scripts/gameplay/header.gd" id="1_2ik40"]
 [ext_resource type="Texture2D" uid="uid://bl34k6uvactda" path="res://assets/icons/wellbeing.png" id="1_gtf2i"]
 [ext_resource type="Texture2D" uid="uid://ce5wdximqp7a5" path="res://assets/icons/productivity.png" id="3_8jvka"]
+[ext_resource type="Theme" uid="uid://blhaw65fe4nko" path="res://resources/theme.tres" id="3_lmbak"]
 [ext_resource type="Texture2D" uid="uid://civjik1wwyef" path="res://assets/icons/momentum.png" id="4_julmt"]
 [ext_resource type="Texture2D" uid="uid://rbvjv7bfs2kq" path="res://assets/icons/coin.png" id="5_mw6pd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mw6pd"]
+bg_color = Color(0.470588, 0.847059, 0.258824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmbak"]
+bg_color = Color(0.4214, 0.6407, 0.86, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu60c"]
+bg_color = Color(0.97, 0.84002, 0.3201, 1)
 
 [node name="Header" type="HBoxContainer"]
 theme_override_constants/separation = 20
@@ -32,7 +42,9 @@ custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_styles/fill = SubResource("StyleBoxFlat_mw6pd")
 max_value = 1.0
+value = 0.5
 allow_greater = true
 show_percentage = false
 
@@ -49,6 +61,7 @@ vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Wellbeing/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_lmbak")
 text = "Wellbeing"
 horizontal_alignment = 1
 
@@ -73,7 +86,9 @@ custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_styles/fill = SubResource("StyleBoxFlat_lmbak")
 max_value = 1.0
+value = 0.5
 show_percentage = false
 
 [node name="Value" type="Label" parent="Productivity/VBoxContainer/ProgressBar"]
@@ -89,6 +104,7 @@ vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Productivity/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_lmbak")
 text = "Productivity"
 horizontal_alignment = 1
 
@@ -113,7 +129,9 @@ custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_styles/fill = SubResource("StyleBoxFlat_wu60c")
 max_value = 1.0
+value = 0.5
 show_percentage = false
 
 [node name="Value" type="Label" parent="Momentum/VBoxContainer/ProgressBar"]
@@ -129,6 +147,7 @@ vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Momentum/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_lmbak")
 text = "Momentum"
 horizontal_alignment = 1
 
@@ -148,6 +167,7 @@ stretch_mode = 4
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("3_lmbak")
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -1,13 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://ch1arasjga7d5"]
+[gd_scene load_steps=6 format=3 uid="uid://ch1arasjga7d5"]
 
 [ext_resource type="Script" uid="uid://cntvyyy03tkm0" path="res://scripts/menu/menu.gd" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://cajtwltb7lebq" path="res://assets/backgrounds/intro.png" id="2_mhnvy"]
 [ext_resource type="Script" uid="uid://4n6l4v3v7a6e" path="res://scripts/menu/game_over_message.gd" id="2_vjb58"]
+[ext_resource type="Theme" uid="uid://blhaw65fe4nko" path="res://resources/theme.tres" id="3_4ytvr"]
 [ext_resource type="Script" uid="uid://csr31pjway5n4" path="res://scripts/menu/coin_display.gd" id="3_con2f"]
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_vjb58")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.501961)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mhnvy")
+stretch_mode = 6
 
 [node name="Container" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 15
@@ -23,6 +35,7 @@ grow_vertical = 2
 [node name="Title" type="Label" parent="CanvasLayer/Container"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 100
 text = "Game Title"
 horizontal_alignment = 1
@@ -31,11 +44,13 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 51
-text = " Play "
+theme = ExtResource("3_4ytvr")
+theme_override_font_sizes/font_size = 50
+text = "Play"
 
 [node name="Game over text" type="Label" parent="CanvasLayer/Container"]
 layout_mode = 2
+theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 30
 text = "<game over text>"
 horizontal_alignment = 1
@@ -54,6 +69,7 @@ layout_mode = 2
 [node name="Title" type="Label" parent="CanvasLayer/Container/Stats/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 50
 text = "Stats"
 
@@ -63,11 +79,13 @@ theme_override_constants/separation = 20
 
 [node name="Coin" type="Label" parent="CanvasLayer/Container/Stats/HBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 30
 text = "Coin"
 
 [node name="Value" type="Label" parent="CanvasLayer/Container/Stats/HBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 30
 text = "0"
 script = ExtResource("3_con2f")
@@ -78,16 +96,19 @@ theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="CanvasLayer/Container/Stats/Wellbeing"]
 layout_mode = 2
+theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 30
 text = "Wellbeing"
 
 [node name="Value" type="Label" parent="CanvasLayer/Container/Stats/Wellbeing"]
 layout_mode = 2
+theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 30
 text = "10"
 
 [node name="Button" type="Button" parent="CanvasLayer/Container/Stats/Wellbeing"]
 layout_mode = 2
+theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 30
 text = " +1 (5 coin) "
 
@@ -97,16 +118,19 @@ theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="CanvasLayer/Container/Stats/Productivity"]
 layout_mode = 2
+theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 30
 text = "Productivity"
 
 [node name="Value" type="Label" parent="CanvasLayer/Container/Stats/Productivity"]
 layout_mode = 2
+theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 30
 text = "10"
 
 [node name="Button" type="Button" parent="CanvasLayer/Container/Stats/Productivity"]
 layout_mode = 2
+theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 30
 text = " +1 (5 coin) "
 
@@ -116,16 +140,19 @@ theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="CanvasLayer/Container/Stats/Momentum"]
 layout_mode = 2
+theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 30
 text = "Momentum"
 
 [node name="Value" type="Label" parent="CanvasLayer/Container/Stats/Momentum"]
 layout_mode = 2
+theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 30
 text = "10"
 
 [node name="Button" type="Button" parent="CanvasLayer/Container/Stats/Momentum"]
 layout_mode = 2
+theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 30
 text = " +1 (5 coin) "
 
