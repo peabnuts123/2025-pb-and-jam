@@ -100,7 +100,7 @@ func shoot():
 	var bullet = bullet_node.instantiate()
 
 	bullet.direction = Vector2.UP
-	bullet.position = global_position + (bullet.direction * 50)
+	bullet.position = global_position + (bullet.direction * 80)
 
 
 	get_tree().current_scene.call_deferred("add_child", bullet)
