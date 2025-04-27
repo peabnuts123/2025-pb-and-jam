@@ -10,6 +10,9 @@ var spawn_count: int = 0
 var max_enemies: int = 5
 
 func _ready():
+	#set level difficulty
+	max_enemies = max_enemies * (SaveData.current_run_level +1)
+	
 	screen_size = get_viewport().get_visible_rect().size
 	spawn_enemy()
 
@@ -25,9 +28,12 @@ func spawn_enemy():
 		#set time until next spawn
 		var next_spawn_time = randf_range(min_spawn_time, max_spawn_time)
 		await get_tree().create_timer(next_spawn_time).timeout
-		spawn_enemy()
 		spawn_count += 1
+		spawn_enemy()
+		
 	else:
+		
+		
 		var boss = boss_prefab.instantiate()
 		boss.position = Vector2(screen_size.x/2, -50)
 		add_child(boss)
