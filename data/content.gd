@@ -13,8 +13,8 @@ enum BulletType {
 # - Economy
 var upgrade_cost: int = 5;
 var initial_coin: int = 0
-var stats_initial_value: int = 10;
-var stats_max_value: int = 20;
+var stats_initial_value: int = 0;
+var stats_max_value: int = 10;
 # - Item generation
 var item_buff_value_range_min: int = 1;
 var item_buff_value_range_max: int = 3;
