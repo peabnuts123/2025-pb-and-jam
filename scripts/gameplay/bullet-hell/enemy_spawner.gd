@@ -7,14 +7,18 @@ extends Area2D
 
 var screen_size: Vector2
 var spawn_count: int = 0
-var max_enemies: int = 5
+var base_max_enemies = 5
+var max_enemies: int = 0
 
 func _ready():
 	#set level difficulty
-	max_enemies = max_enemies * (SaveData.current_run_level +1)
+	update_max_enemies()
 	
 	screen_size = get_viewport().get_visible_rect().size
 	spawn_enemy()
+
+func update_max_enemies():
+	max_enemies = max(base_max_enemies, base_max_enemies + (SaveData.current_run_level - 1) * 2)
 
 func spawn_enemy():
 	if spawn_count < max_enemies:
