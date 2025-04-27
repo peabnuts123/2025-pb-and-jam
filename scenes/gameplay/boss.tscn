@@ -31,7 +31,7 @@ scale = Vector2(20, 17.674)
 texture = SubResource("PlaceholderTexture2D_2gjxj")
 
 [node name="Speed" type="Timer" parent="."]
-wait_time = 0.05
+wait_time = 0.2
 
 [node name="Duration" type="Timer" parent="."]
 wait_time = 4.0

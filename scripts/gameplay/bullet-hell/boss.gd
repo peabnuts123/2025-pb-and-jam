@@ -1,11 +1,13 @@
 extends Node2D
 
+signal died
+
 var theta: float = 0.0
 @export_range(0,2*PI) var alpha: float = 0.0
 
 @export var bullet_node: PackedScene
 
-var health = 50:
+var health = 5:
 	set(value):
 		health = value
 
@@ -110,6 +112,10 @@ func shoot(angle):
 
 func _on_speed_timeout():
 	shoot(theta)
+	
 
 func die():
-	queue_free()
+	died.emit()
+	queue_free() 
+	
+	

@@ -50,3 +50,4 @@ position = Vector2(250, 408)
 position = Vector2(387, -147)
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/ScreenContent/KYS" to="." method="_on_kys_pressed"]
+[connection signal="boss_died" from="enemy_spawner" to="." method="on_boss_die"]

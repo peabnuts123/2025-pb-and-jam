@@ -10,6 +10,8 @@ var spawn_count: int = 0
 var base_max_enemies = 6
 var max_enemies: int = 0
 
+signal boss_died
+
 func _ready():
 	#set level difficulty
 	update_max_enemies()
@@ -45,3 +47,8 @@ func spawn_enemy():
 		var boss = boss_prefab.instantiate()
 		boss.position = Vector2(screen_size.x/2, -50)
 		add_child(boss)
+		
+		boss.connect("died", _on_boss_died)
+
+func _on_boss_died():
+	boss_died.emit()
