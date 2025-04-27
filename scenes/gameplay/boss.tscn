@@ -1,35 +1,41 @@
-[gd_scene load_steps=14 format=3 uid="uid://bonr8npmg7qyc"]
+[gd_scene load_steps=17 format=3 uid="uid://bonr8npmg7qyc"]
 
 [ext_resource type="Script" uid="uid://cjoqbl4ky5eik" path="res://scripts/gameplay/bullet-hell/boss.gd" id="1_fooby"]
 [ext_resource type="PackedScene" uid="uid://e3mcb03cfh1x" path="res://scenes/gameplay/bullet.tscn" id="2_6of3n"]
+[ext_resource type="Texture2D" uid="uid://bt53h3sa1rlkm" path="res://assets/marie/marie0.png" id="2_g2a36"]
+[ext_resource type="Texture2D" uid="uid://cdxotnig2qqar" path="res://assets/marie/marie1.png" id="3_ayeo3"]
 [ext_resource type="Script" uid="uid://cn3uy77fairjw" path="res://scripts/gameplay/bullet-hell/finite_state_machine.gd" id="3_keu4x"]
+<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://d2dd8c68lr73r" path="res://scripts/gameplay/bullet-hell/idle.gd" id="4_b3fdw"]
+=======
+[ext_resource type="Texture2D" uid="uid://lpkt1y158a0h" path="res://assets/marie/marie2.png" id="4_2pxj7"]
+[ext_resource type="Script" path="res://scripts/gameplay/bullet-hell/idle.gd" id="4_b3fdw"]
+>>>>>>> d507cef3ab136626705c9edeac9b0fdfdcbe98b1
 [ext_resource type="Script" uid="uid://bnudxubbxcc8o" path="res://scripts/gameplay/bullet-hell/5_leaf.gd" id="5_20b4o"]
+[ext_resource type="Texture2D" uid="uid://djiaqhto15tpi" path="res://assets/marie/marie3.png" id="5_xu1mp"]
 [ext_resource type="Script" uid="uid://b8mxdw66iuaal" path="res://scripts/gameplay/bullet-hell/4_leaf.gd" id="6_fnu1i"]
 [ext_resource type="Script" uid="uid://ckdipvde7gw53" path="res://scripts/gameplay/bullet-hell/3_leaf.gd" id="7_3xo6r"]
 [ext_resource type="Script" uid="uid://bu58k0pips46h" path="res://scripts/gameplay/bullet-hell/2_leaf.gd" id="8_3xo6r"]
 [ext_resource type="Script" uid="uid://bn218nxeveog0" path="res://scripts/gameplay/bullet-hell/enemy-collision.gd" id="9_44eaj"]
 [ext_resource type="AudioStream" uid="uid://bsc8dy3dqwomu" path="res://assets/audio/AlienDeath.wav" id="10_i6hkc"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2gjxj"]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_6of3n"]
 radius = 96.2052
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3xo6r"]
-size = Vector2(19.8, 17.8)
+size = Vector2(17, 37)
 
 [node name="Boss" type="Node2D"]
 scale = Vector2(5, 5)
 script = ExtResource("1_fooby")
 alpha = 2.83
+marie_textures = Array[Texture]([ExtResource("2_g2a36"), ExtResource("3_ayeo3"), ExtResource("4_2pxj7"), ExtResource("5_xu1mp")])
 bullet_node = ExtResource("2_6of3n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0.986528, 0.618562, 0.649134, 1)
-position = Vector2(-0.2, 0.4)
-scale = Vector2(20, 17.674)
-texture = SubResource("PlaceholderTexture2D_2gjxj")
+position = Vector2(9.6, -21.6)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_g2a36")
 
 [node name="Speed" type="Timer" parent="."]
 wait_time = 0.2
@@ -80,7 +86,8 @@ collision_layer = 2
 script = ExtResource("9_44eaj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collider"]
-position = Vector2(-0.0999999, 0.300001)
+position = Vector2(8.3, -18.5)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_3xo6r")
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
