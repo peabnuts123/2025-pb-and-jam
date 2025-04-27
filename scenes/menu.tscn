@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://ch1arasjga7d5"]
+[gd_scene load_steps=11 format=3 uid="uid://ch1arasjga7d5"]
 
 [ext_resource type="Script" uid="uid://cntvyyy03tkm0" path="res://scripts/menu/menu.gd" id="1_vjb58"]
 [ext_resource type="Texture2D" uid="uid://cajtwltb7lebq" path="res://assets/backgrounds/intro.png" id="2_mhnvy"]
 [ext_resource type="Script" uid="uid://4n6l4v3v7a6e" path="res://scripts/menu/game_over_message.gd" id="2_vjb58"]
 [ext_resource type="Theme" uid="uid://b6ant41uglamm" path="res://resources/theme.tres" id="3_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://c38mw76133ljp" path="res://assets/title.png" id="3_70i5f"]
 [ext_resource type="Script" uid="uid://csr31pjway5n4" path="res://scripts/menu/coin_display.gd" id="3_con2f"]
 [ext_resource type="AudioStream" uid="uid://d1gf4yxalbek8" path="res://assets/audio/enya.ogg" id="6_g3eks"]
 [ext_resource type="AudioStream" uid="uid://b5el5hibuq61i" path="res://assets/audio/GetCoins.wav" id="7_v86rl"]
@@ -35,13 +36,13 @@ offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title" type="Label" parent="CanvasLayer/Container"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Container"]
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 size_flags_horizontal = 4
-theme = ExtResource("3_4ytvr")
-theme_override_font_sizes/font_size = 100
-text = "Game Title"
-horizontal_alignment = 1
+texture = ExtResource("3_70i5f")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Play button" type="Button" parent="CanvasLayer/Container"]
 layout_mode = 2
