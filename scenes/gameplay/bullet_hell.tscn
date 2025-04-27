@@ -77,6 +77,7 @@ position = Vector2(250, 408)
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_sylgr")
+volume_db = -10.0
 autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/ScreenContent/KYS" to="." method="_on_kys_pressed"]
