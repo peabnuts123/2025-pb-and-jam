@@ -11,7 +11,7 @@ enum BulletType {
 
 # Balance
 # - Economy
-var upgrade_cost: int = 5;
+var upgrade_cost: int = 10;
 var initial_coin: int = 0
 var stats_initial_value: int = 0;
 var stats_max_value: int = 10;
@@ -34,7 +34,8 @@ var boss_base_health: int = 50
 var boss_health_increase_per_level = 25
 # - Enemies
 var enemy_base_health: int = 10
-var enemy_health_increase_per_level = 5
+var enemy_health_increase_per_level: int = 5
+var enemy_coins_per_death: int = 1
 # - Damage
 var bullet_type_default_damage: float = 5
 var bullet_type_poison_damage_per_tick: float = 2

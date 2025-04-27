@@ -10,6 +10,7 @@ extends HBoxContainer
 
 func _ready():
 	_update_ui()
+	SaveData.coin_changed.connect(_update_ui)
 	SaveData.stat_current_wellbeing_changed.connect(_update_ui)
 	SaveData.stat_current_productivity_changed.connect(_update_ui)
 	SaveData.stat_current_momentum_changed.connect(_update_ui)
