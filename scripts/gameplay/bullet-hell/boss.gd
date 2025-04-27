@@ -50,10 +50,16 @@ func _process_zooming_behaviour():
 	# 1. Pick a target location to move to
 	zooming_behaviour_current_phase = ZoomBehaviourSubPhase.Moving
 	zooming_behaviour_move_target = Vector2(randf_range(screen_margin, screen_size.x - screen_margin), randf_range(screen_margin, screen_size.y - screen_margin))
+	print("[Boss] (_process_zooming_behaviour) New target (zooming_behaviour_move_target='%s')" % str(zooming_behaviour_move_target))
 
 	# 2. Move there
 	var move_delta = zooming_behaviour_move_target - position
 	while move_delta.length_squared() > reached_target_radius_squared:
+		# @NOTE: Fix for crash
+		if not is_inside_tree():
+			zooming_behaviour_current_phase = ZoomBehaviourSubPhase.Ready
+			return
+
 		# Wait 1 frame
 		await get_tree().process_frame
 		# Move towards target
@@ -64,6 +70,12 @@ func _process_zooming_behaviour():
 	# 3. Wait there for a while
 	zooming_behaviour_current_phase = ZoomBehaviourSubPhase.Waiting
 	var wait_time_seconds = randf_range(Content.boss_zoom_phase_hold_time_min_seconds, Content.boss_zoom_phase_hold_time_max_seconds)
+
+	# @NOTE: Fix for crash
+	if not is_inside_tree():
+		zooming_behaviour_current_phase = ZoomBehaviourSubPhase.Ready
+		return
+
 	await get_tree().create_timer(wait_time_seconds).timeout
 
 	# Mark zoom behaviour as ready again
@@ -92,7 +104,8 @@ func shoot(angle):
 
 	bullet.set_property(bullet_type)
 
-	get_tree().current_scene.call_deferred("add_child", bullet)
+	if is_inside_tree():
+		get_tree().current_scene.call_deferred("add_child", bullet)
 
 
 func _on_speed_timeout():

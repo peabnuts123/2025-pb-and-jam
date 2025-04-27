@@ -6,6 +6,7 @@ var speed_multiplier = 1
 @onready var debug = $debug
 @onready var progress_bar = $ProgressBar
 @onready var shoot_timer = $ShootTimer
+@onready var animation = $Sprite2D
 
 var health = 100:
 	set(value):
@@ -16,6 +17,7 @@ var health = 100:
 
 var movement_speed_per_second: float;
 
+var is_dead = false
 var can_shoot = true
 
 func _ready():
@@ -43,7 +45,9 @@ func _process(_delta):
 
 
 func _physics_process(_delta):
-	velocity = Input.get_vector("ui_left", "ui_right", "ui_up","ui_down") * speed_multiplier * movement_speed_per_second
+	var direction = Input.get_vector("ui_left", "ui_right", "ui_up","ui_down")
+	velocity = direction * speed_multiplier * movement_speed_per_second
+	animation.speed_scale = clampf(direction.length(), 0.0, 1.0)
 	move_and_slide()
 
 
@@ -67,22 +71,26 @@ func poison():
 	debug.text = "poison"
 	for i in range(Content.bullet_type_poison_damage_num_ticks):
 		health -= Content.bullet_type_poison_damage_per_tick
+		if is_dead:
+			break
 		await get_tree().create_timer(1).timeout
 
 
 func slow():
 	debug.text = "slow"
 	health -= Content.bullet_type_slow_damage
-	speed_multiplier = Content.bullet_type_slow_speed_multiplier
-	await get_tree().create_timer(Content.bullet_type_slow_duration_seconds).timeout
-	speed_multiplier = 1
+	if not is_dead:
+		speed_multiplier = Content.bullet_type_slow_speed_multiplier
+		await get_tree().create_timer(Content.bullet_type_slow_duration_seconds).timeout
+		speed_multiplier = 1
 
 func stun():
 	debug.text = "stun"
 	health -= Content.bullet_type_stun_damage
-	speed_multiplier = 0
-	await get_tree().create_timer(Content.bullet_type_stun_duration).timeout
-	speed_multiplier = 1
+	if not is_dead:
+		speed_multiplier = 0
+		await get_tree().create_timer(Content.bullet_type_stun_duration).timeout
+		speed_multiplier = 1
 
 
 func shoot():
@@ -103,5 +111,6 @@ func _on_shoot_timer_fire():
 
 
 func die():
+	is_dead = true
 	SaveData.game_over_message = "You died!!!!"
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
