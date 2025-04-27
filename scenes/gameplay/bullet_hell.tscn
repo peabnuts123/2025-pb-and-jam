@@ -57,7 +57,7 @@ position = Vector2(646, 562)
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_sylgr")
-volume_db = -10.0
+volume_db = -5.0
 autoplay = true
 
 [connection signal="boss_died" from="enemy_spawner" to="." method="on_boss_die"]
