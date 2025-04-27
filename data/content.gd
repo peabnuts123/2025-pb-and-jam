@@ -47,12 +47,12 @@ var bullet_type_stun_damage: float = 5
 var bullet_type_stun_duration: float = 1.5
 
 # - Player stats
-var player_health_min: float = 50
-var player_health_max: float = 250
+var player_health_min: float = 30
+var player_health_max: float = 100
 var player_movement_speed_min: float = 150
 var player_movement_speed_max: float = 600
 var player_fire_rate_per_second_min: float = 2.5
-var player_fire_rate_per_second_max: float = 10
+var player_fire_rate_per_second_max: float = 7
 
 
 func _ready():

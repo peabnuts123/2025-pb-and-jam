@@ -8,8 +8,10 @@ var theta: float = 0.0
 @export var bullet_node: PackedScene
 
 @onready var sprite = $Sprite2D
+@onready var death_sound = $DeathSound
 
 var health = 0
+var is_dead = false
 
 enum BehaviourMode {
 	EnteringScreen,
@@ -94,6 +96,9 @@ func get_vector(angle):
 
 
 func shoot(angle):
+	if is_dead:
+		return
+
 	var bullet = bullet_node.instantiate()
 
 	bullet.position = global_position
@@ -120,5 +125,12 @@ func _on_speed_timeout():
 
 
 func die():
+	if is_dead:
+		return
+	is_dead = true
 	died.emit()
+	sprite.visible = false
+	death_sound.play()
+	await death_sound.finished
+
 	queue_free()
