@@ -172,5 +172,17 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Level" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Level"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("3_lmbak")
+text = "Level 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="_Spacer" type="Control" parent="."]
 layout_mode = 2
