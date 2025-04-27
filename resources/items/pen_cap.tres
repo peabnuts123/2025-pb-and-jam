@@ -7,5 +7,5 @@
 script = ExtResource("1_sckep")
 name = "Pen Cap"
 texture = ExtResource("2_sckep")
-description = "dried out now and you don't know where it is. Fuck. "
+description = "It's dried out now and you don't know where it is. Fuck. "
 metadata/_custom_type_script = "uid://dwqe1grctj7ci"
