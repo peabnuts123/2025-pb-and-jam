@@ -31,7 +31,7 @@ var zooming_behaviour_current_phase = ZoomBehaviourSubPhase.Ready
 
 func _ready():
 	# @NOTE `current_run_level` is 1-based
-	sprite.texture = marie_textures[clamp(SaveData.current_run_level - 1, 0, marie_textures.size())]
+	sprite.texture = marie_textures[clamp(SaveData.current_run_level - 1, 0, marie_textures.size() - 1)]
 
 func _process(delta):
 	match current_behaviour:
