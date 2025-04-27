@@ -63,34 +63,37 @@ func set_status(bullet_type: Content.BulletType):
 			stun()
 
 func fire():
-	debug.text = "fire"
+	# debug.text = "fire"
 	health -= Content.bullet_type_default_damage
 
 
 func poison():
-	debug.text = "poison"
+	debug.text = "poisoned"
 	for i in range(Content.bullet_type_poison_damage_num_ticks):
 		health -= Content.bullet_type_poison_damage_per_tick
 		if is_dead:
 			break
 		await get_tree().create_timer(1).timeout
+	debug.text = ""
 
 
 func slow():
-	debug.text = "slow"
+	debug.text = "slowed"
 	health -= Content.bullet_type_slow_damage
 	if not is_dead:
 		speed_multiplier = Content.bullet_type_slow_speed_multiplier
 		await get_tree().create_timer(Content.bullet_type_slow_duration_seconds).timeout
 		speed_multiplier = 1
+	debug.text = ""
 
 func stun():
-	debug.text = "stun"
+	debug.text = "stunned"
 	health -= Content.bullet_type_stun_damage
 	if not is_dead:
 		speed_multiplier = 0
 		await get_tree().create_timer(Content.bullet_type_stun_duration).timeout
 		speed_multiplier = 1
+	debug.text = ""
 
 
 func shoot():

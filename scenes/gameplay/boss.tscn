@@ -40,6 +40,7 @@ wait_time = 0.2
 wait_time = 4.0
 
 [node name="debug" type="Label" parent="."]
+visible = false
 offset_left = -3.4
 offset_top = -13.6
 offset_right = 147.6

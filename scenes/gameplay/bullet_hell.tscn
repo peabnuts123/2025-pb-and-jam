@@ -49,6 +49,7 @@ grow_vertical = 2
 
 [node name="Header" parent="CanvasLayer/VBoxContainer" instance=ExtResource("2_gq4co")]
 layout_mode = 2
+alignment = 0
 
 [node name="enemy_spawner" parent="." instance=ExtResource("6_gqdqa")]
 
