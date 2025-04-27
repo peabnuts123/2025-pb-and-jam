@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://nqjm76tk3x2c"
+path="res://.godot/imported/Wholesome Music.mp3-b8f95a94b4f26d4e6b2c09ae65e2a471.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Wholesome Music.mp3"
+dest_files=["res://.godot/imported/Wholesome Music.mp3-b8f95a94b4f26d4e6b2c09ae65e2a471.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

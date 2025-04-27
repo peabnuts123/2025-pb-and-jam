@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bt1neao7v1xcj"]
+[gd_scene load_steps=14 format=3 uid="uid://bt1neao7v1xcj"]
 
 [ext_resource type="Script" uid="uid://cemxu2rexsj0a" path="res://scripts/gameplay/decision-screen/decision_screen.gd" id="1_xr8nw"]
 [ext_resource type="PackedScene" uid="uid://b241pdt51n4tj" path="res://scenes/gameplay/header.tscn" id="2_0aixd"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ck5kaksotklkw" path="res://assets/items/itchy_sweater.png" id="2_m2abj"]
 [ext_resource type="Texture2D" uid="uid://ds2hkocqy3w10" path="res://assets/player/player_hands.png" id="3_dih7f"]
 [ext_resource type="Theme" uid="uid://b6ant41uglamm" path="res://resources/theme.tres" id="4_0pbpm"]
+[ext_resource type="AudioStream" uid="uid://nqjm76tk3x2c" path="res://assets/audio/Wholesome Music.mp3" id="7_isfba"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isfba"]
 bg_color = Color(0, 0, 0, 0.113725)
@@ -219,6 +220,10 @@ theme_override_font_sizes/font_size = 25
 text = "<reward>"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_isfba")
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/ScreenContent/Left/Keep Button" to="." method="_on_keep_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/ScreenContent/Right/Discard Button" to="." method="_on_discard_pressed"]
