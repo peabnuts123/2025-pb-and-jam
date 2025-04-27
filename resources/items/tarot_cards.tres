@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://eribltvs2lfy"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://fpxt5a732roa"]
 
 [ext_resource type="Script" uid="uid://dwqe1grctj7ci" path="res://scripts/resources/item.gd" id="1_shvd4"]
-[ext_resource type="Texture2D" uid="uid://ck5kaksotklkw" path="res://assets/items/itchy_sweater.png" id="2_1je11"]
+[ext_resource type="Texture2D" uid="uid://61ydifil1sb5" path="res://assets/items/tarot_deck.png" id="2_shvd4"]
 
 [resource]
 script = ExtResource("1_shvd4")
-name = "Misc Charger"
-texture = ExtResource("2_1je11")
-description = "What if it’s for something important?"
+name = "Tarot Cards"
+texture = ExtResource("2_shvd4")
+description = "It’s missing some cards, so your future predictions maybe flawed."
 metadata/_custom_type_script = "uid://dwqe1grctj7ci"

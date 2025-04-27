@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bg8g1tsowigfp"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://btvs085157dxk"]
 
 [ext_resource type="Script" uid="uid://dwqe1grctj7ci" path="res://scripts/resources/item.gd" id="1_d823w"]
-[ext_resource type="Texture2D" uid="uid://ck5kaksotklkw" path="res://assets/items/itchy_sweater.png" id="2_7d5bu"]
+[ext_resource type="Texture2D" uid="uid://d4b2rl8jgkqug" path="res://assets/items/misc_charger.png" id="2_d823w"]
 
 [resource]
 script = ExtResource("1_d823w")
-name = "Hideous Hat"
-texture = ExtResource("2_7d5bu")
-description = " To wear when you preform with your band “The Hideous Hats”, that doesn’t currently exist."
+name = "Miscellanous Charger"
+texture = ExtResource("2_d823w")
+description = "What if it’s for something important?"
 metadata/_custom_type_script = "uid://dwqe1grctj7ci"

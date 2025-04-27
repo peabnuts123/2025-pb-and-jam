@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ch2v1mx3hxdqj"]
 
 [ext_resource type="Script" uid="uid://dwqe1grctj7ci" path="res://scripts/resources/item.gd" id="1_sckep"]
-[ext_resource type="Texture2D" uid="uid://ck5kaksotklkw" path="res://assets/items/itchy_sweater.png" id="2_ygnwy"]
+[ext_resource type="Texture2D" uid="uid://irpmih5jlbai" path="res://assets/items/penlid.png" id="2_sckep"]
 
 [resource]
 script = ExtResource("1_sckep")
-name = "Itchy Sweater"
-texture = ExtResource("2_ygnwy")
-description = "It’s acrylic, but your grandma knitted it."
+name = "Pen Cap"
+texture = ExtResource("2_sckep")
+description = "dried out now and you don't know where it is. Fuck. "
 metadata/_custom_type_script = "uid://dwqe1grctj7ci"

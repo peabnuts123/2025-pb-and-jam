@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://w1ayxoe7x0d7"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cedwll4um8sdb"]
 
 [ext_resource type="Script" uid="uid://dwqe1grctj7ci" path="res://scripts/resources/item.gd" id="1_7gmbj"]
-[ext_resource type="Texture2D" uid="uid://ck5kaksotklkw" path="res://assets/items/itchy_sweater.png" id="2_4vp37"]
+[ext_resource type="Texture2D" uid="uid://cp5d6wncih4rj" path="res://assets/items/ugly_hat.png" id="2_7gmbj"]
 
 [resource]
 script = ExtResource("1_7gmbj")
-name = "Out of Tune Guitar"
-texture = ExtResource("2_4vp37")
-description = "You bought it because you wanted to start a band called “The Hideous Hats”, you never learned to play it but you should keep the dream alive right??"
+name = "Hideous Hat"
+texture = ExtResource("2_7gmbj")
+description = "To wear when you preform with your band “The Hideous Hats”, that doesn’t currently exist."
 metadata/_custom_type_script = "uid://dwqe1grctj7ci"

@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c5fi2v1pls0c7"]
 
 [ext_resource type="Script" uid="uid://dwqe1grctj7ci" path="res://scripts/resources/item.gd" id="1_o8mj4"]
-[ext_resource type="Texture2D" uid="uid://ck5kaksotklkw" path="res://assets/items/itchy_sweater.png" id="2_ig1h7"]
+[ext_resource type="Texture2D" uid="uid://dh01ilkid8xdh" path="res://assets/items/baby_knitting.png" id="2_o8mj4"]
 
 [resource]
 script = ExtResource("1_o8mj4")
-name = "Worlds Best Mum Cup"
-texture = ExtResource("2_ig1h7")
-description = "You do not have children, is it funny or cringe to own it?"
+name = "Knitting Project"
+texture = ExtResource("2_o8mj4")
+description = "You started it years ago. You think it was for your friends baby who is now five years old."
 metadata/_custom_type_script = "uid://dwqe1grctj7ci"

@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://da4w8ld8lve8a"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dofhcvpmtwtdi"]
 
 [ext_resource type="Script" uid="uid://dwqe1grctj7ci" path="res://scripts/resources/item.gd" id="1_fh8jh"]
-[ext_resource type="Texture2D" uid="uid://ck5kaksotklkw" path="res://assets/items/itchy_sweater.png" id="2_dgn1e"]
+[ext_resource type="Texture2D" uid="uid://dr4rbvohi3ywf" path="res://assets/items/jeans.png" id="2_fh8jh"]
 
 [resource]
 script = ExtResource("1_fh8jh")
-name = "Pen Cap"
-texture = ExtResource("2_dgn1e")
-description = "It's for your favorite pen, but it's probably dried out now and you don't know where it is. Fuck. "
+name = "Ripped Jeans"
+texture = ExtResource("2_fh8jh")
+description = "Rips not intentional."
 metadata/_custom_type_script = "uid://dwqe1grctj7ci"

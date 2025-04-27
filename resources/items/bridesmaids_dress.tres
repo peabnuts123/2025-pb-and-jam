@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dw54syr0w4by8"]
+
+[ext_resource type="Script" uid="uid://dwqe1grctj7ci" path="res://scripts/resources/item.gd" id="1_bunw4"]
+[ext_resource type="Texture2D" uid="uid://bo7xt2hgyui2n" path="res://assets/items/bridesmaid_dress.png" id="2_bunw4"]
+
+[resource]
+script = ExtResource("1_bunw4")
+name = "Bridesmaid's Dress"
+texture = ExtResource("2_bunw4")
+description = "You wore this to your best friends princess themed wedding (they’re divorced"
+metadata/_custom_type_script = "uid://dwqe1grctj7ci"

@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://7gbqvvmutbi5"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://548io8l10f7a"]
 
 [ext_resource type="Script" uid="uid://dwqe1grctj7ci" path="res://scripts/resources/item.gd" id="1_pbj6q"]
-[ext_resource type="Texture2D" uid="uid://ck5kaksotklkw" path="res://assets/items/itchy_sweater.png" id="2_i56qj"]
+[ext_resource type="Texture2D" uid="uid://b34qbev7shbi8" path="res://assets/items/bandtshirt.png" id="2_pbj6q"]
 
 [resource]
 script = ExtResource("1_pbj6q")
-name = "Knitting Project"
-texture = ExtResource("2_i56qj")
-description = "You started it years ago. You think it was for your friends baby who is now five years old."
+name = "Band Tee"
+texture = ExtResource("2_pbj6q")
+description = "It’s comfy, you sleep in this every night, but it’s from a band that is now problematic."
 metadata/_custom_type_script = "uid://dwqe1grctj7ci"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bpy3lsmlflnma"]
+
+[ext_resource type="Script" uid="uid://dwqe1grctj7ci" path="res://scripts/resources/item.gd" id="1_mi4nn"]
+[ext_resource type="Texture2D" uid="uid://cfgd1f3wia8vh" path="res://assets/items/statement_necklace.png" id="2_mi4nn"]
+
+[resource]
+script = ExtResource("1_mi4nn")
+name = "Statement Necklace"
+texture = ExtResource("2_mi4nn")
+description = "It might come back into fashion?"
+metadata/_custom_type_script = "uid://dwqe1grctj7ci"
