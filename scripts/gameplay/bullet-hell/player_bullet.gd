@@ -24,7 +24,7 @@ func _ready():
 
 func _on_area_entered(area):
 	if area.is_in_group('enemy'):
-		area.take_damage(1); # Damage enemies
+		area.take_damage(Content.bullet_type_default_damage); # Damage enemies
 		_pop()
 	elif area.is_in_group('enemy_bullet'):
 		# queue_free(); # Destroy on impact

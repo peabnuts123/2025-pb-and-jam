@@ -9,9 +9,7 @@ var theta: float = 0.0
 
 @onready var sprite = $Sprite2D
 
-var health = 5:
-	set(value):
-		health = value
+var health = 0
 
 enum BehaviourMode {
 	EnteringScreen,
@@ -30,8 +28,9 @@ var zooming_behaviour_move_target: Vector2
 var zooming_behaviour_current_phase = ZoomBehaviourSubPhase.Ready
 
 func _ready():
-	# @NOTE `current_run_level` is 1-based
-	sprite.texture = marie_textures[clamp(SaveData.current_run_level - 1, 0, marie_textures.size() - 1)]
+	var current_level = max(0, SaveData.current_run_level - 1)
+	sprite.texture = marie_textures[clamp(current_level, 0, marie_textures.size() - 1)]
+	health = Content.boss_base_health + (current_level * Content.boss_health_increase_per_level)
 
 func _process(delta):
 	match current_behaviour:

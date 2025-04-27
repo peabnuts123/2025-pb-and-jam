@@ -2,7 +2,11 @@ extends Node2D
 
 @export var bullet_node: PackedScene
 
-var health = 5
+var health = 0
+
+func _ready():
+	var current_level = max(0, SaveData.current_run_level - 1)
+	health = Content.enemy_base_health + (current_level * Content.enemy_health_increase_per_level)
 
 func _process(delta):
 	var screen_size = get_viewport().get_visible_rect().size
