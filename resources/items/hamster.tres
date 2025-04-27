@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://df4vkmnxh777i"]
+
+[ext_resource type="Script" uid="uid://dwqe1grctj7ci" path="res://scripts/resources/item.gd" id="1_8ph8b"]
+[ext_resource type="Texture2D" uid="uid://bue8koleoruk0" path="res://assets/items/hamster.png" id="2_8ph8b"]
+
+[resource]
+script = ExtResource("1_8ph8b")
+name = "Hamster"
+texture = ExtResource("2_8ph8b")
+description = "He doesn't move much these days..."
+metadata/_custom_type_script = "uid://dwqe1grctj7ci"

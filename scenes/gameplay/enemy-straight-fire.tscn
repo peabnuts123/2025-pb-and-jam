@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://8st5npkat11p" path="res://scripts/gameplay/bullet-hell/enemy_straight_fire.gd" id="1_4kluw"]
 [ext_resource type="PackedScene" uid="uid://e3mcb03cfh1x" path="res://scenes/gameplay/bullet.tscn" id="2_c6ydr"]
 [ext_resource type="Texture2D" uid="uid://cc53kvgfe7m7b" path="res://assets/dust-bunny/dust-bunny.png" id="3_ea33s"]
-[ext_resource type="Script" path="res://scripts/gameplay/bullet-hell/enemy-collision.gd" id="3_o2v8w"]
+[ext_resource type="Script" uid="uid://bn218nxeveog0" path="res://scripts/gameplay/bullet-hell/enemy-collision.gd" id="3_o2v8w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6ydr"]
 size = Vector2(66, 72)
