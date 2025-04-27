@@ -20,6 +20,7 @@ func _ready():
 	# Bind stats
 	# - Movement speed
 	movement_speed_per_second = lerp(Content.player_movement_speed_min, Content.player_movement_speed_max, SaveData.stat_current_momentum_percentage)
+
 	# - Health
 	var player_max_health = lerp(Content.player_health_min, Content.player_health_max, SaveData.stat_current_wellbeing_percentage)
 	progress_bar.max_value = player_max_health
@@ -27,6 +28,12 @@ func _ready():
 	# - Fire rate
 	var player_fire_rate_per_second = lerp(Content.player_fire_rate_per_second_min, Content.player_fire_rate_per_second_max, SaveData.stat_current_productivity_percentage)
 	shoot_timer.wait_time = 1.0 / player_fire_rate_per_second
+
+	print("(movement_speed_per_second='%d') (player_max_health='%d') (player_fire_rate_per_second='%d')" % [
+		movement_speed_per_second,
+		player_max_health,
+		player_fire_rate_per_second
+	])
 
 func _process(_delta):
 	if can_shoot and Input.is_action_pressed("shoot"):
