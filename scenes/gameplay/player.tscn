@@ -1,24 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://cy0wsgu1v4t1p"]
+[gd_scene load_steps=7 format=3 uid="uid://cy0wsgu1v4t1p"]
 
 [ext_resource type="Script" uid="uid://cm40elhpfq188" path="res://scripts/gameplay/bullet-hell/player.gd" id="1_wgl7f"]
 [ext_resource type="PackedScene" uid="uid://bli4el2h0500q" path="res://scenes/gameplay/player_bullet.tscn" id="2_hrnqq"]
+[ext_resource type="Texture2D" uid="uid://2iopecnc3yq1" path="res://assets/player/sprite_0.png" id="3_dap4h"]
+[ext_resource type="Texture2D" uid="uid://bihhtdpxhnx8w" path="res://assets/player/sprite_1.png" id="4_ki2oj"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1nupm"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_03k2y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dap4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ki2oj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrnqq"]
-size = Vector2(10, 10)
+size = Vector2(13.2, 20)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 2
 script = ExtResource("1_wgl7f")
 bullet_node = ExtResource("2_hrnqq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0.435294, 0.741176, 1, 1)
-scale = Vector2(50, 50)
-texture = SubResource("PlaceholderTexture2D_1nupm")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_03k2y")
+autoplay = "default"
+frame_progress = 0.141668
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_hrnqq")
 

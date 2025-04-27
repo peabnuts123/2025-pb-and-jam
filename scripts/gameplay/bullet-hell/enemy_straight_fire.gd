@@ -17,7 +17,8 @@ func shoot():
 	bullet.direction = Vector2.DOWN
 	bullet.position = global_position + (bullet.direction * 50)
 
-	get_tree().current_scene.call_deferred("add_child", bullet)
+	if is_inside_tree():
+		get_tree().current_scene.call_deferred("add_child", bullet)
 
 func die():
 	queue_free()

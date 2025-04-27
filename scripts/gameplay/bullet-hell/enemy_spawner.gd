@@ -26,11 +26,15 @@ func spawn_enemy():
 		var random_x = randf_range(0, screen_size.x)
 		enemy.position = Vector2(random_x, -50)
 
-		
+
 		add_child(enemy)
-		
+
 		#set time until next spawn
 		var next_spawn_time = randf_range(min_spawn_time, max_spawn_time)
+
+		if not is_inside_tree():
+			return
+
 		await get_tree().create_timer(next_spawn_time).timeout
 		spawn_count += 1
 		spawn_enemy()
@@ -41,4 +45,4 @@ func spawn_enemy():
 		var boss = boss_prefab.instantiate()
 		boss.position = Vector2(screen_size.x/2, -50)
 		add_child(boss)
-			
+
