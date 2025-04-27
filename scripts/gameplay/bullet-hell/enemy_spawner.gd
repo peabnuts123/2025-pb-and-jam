@@ -7,7 +7,7 @@ extends Area2D
 
 var screen_size: Vector2
 var spawn_count: int = 0
-var base_max_enemies = 5
+var base_max_enemies = 6
 var max_enemies: int = 0
 
 func _ready():
@@ -45,4 +45,3 @@ func spawn_enemy():
 		var boss = boss_prefab.instantiate()
 		boss.position = Vector2(screen_size.x/2, -50)
 		add_child(boss)
-
