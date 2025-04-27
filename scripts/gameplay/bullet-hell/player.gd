@@ -52,12 +52,16 @@ func set_status(bullet_type: Content.BulletType):
 func fire():
 	debug.text = "fire"
 	health -= 10
+	if health <= 0:
+		die()
 
 func poison():
 	debug.text = "poison"
 	for i in range(5):
 		health -= 2
 		await get_tree().create_timer(1).timeout
+	if health <=0:
+		die()
 
 func slow():
 	debug.text = "slow"
@@ -85,3 +89,8 @@ func shoot():
 
 func _on_shoot_timer_fire():
 	can_shoot = true
+	
+
+func die():
+	SaveData.game_over_message = "You died!!!!"
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")

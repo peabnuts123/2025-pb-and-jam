@@ -6,7 +6,7 @@ var theta: float = 0.0
 @export var bullet_node: PackedScene
 var bullet_type = Content.BulletType.default
 
-var health = 1:
+var health = 50:
 	set(value):
 		health = value
 
