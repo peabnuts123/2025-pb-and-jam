@@ -28,6 +28,7 @@ var boss_move_speed_per_second: float = 100
 var boss_zoom_phase_hold_time_min_seconds: float = 3
 var boss_zoom_phase_hold_time_max_seconds: float = 8
 var rare_bullet_type_chance_per_type: float = 0.05
+var base_max_enemies: int = 5
 # - Damage
 var bullet_type_default_damage: float = 5
 var bullet_type_poison_damage_per_tick: float = 2

@@ -6,7 +6,6 @@ extends Area2D
 @export var max_spawn_time: float = 2.0  # maximum seconds between spawns
 
 var spawn_count: int = 0
-var base_max_enemies = 6
 var max_enemies: int = 0
 
 signal boss_died
@@ -19,7 +18,7 @@ func _ready():
 	spawn_enemy()
 
 func update_max_enemies():
-	max_enemies = max(base_max_enemies, base_max_enemies + (SaveData.current_run_level - 1) * 2)
+	max_enemies = max(Content.base_max_enemies, Content.base_max_enemies + (SaveData.current_run_level - 1) * 3)
 
 func spawn_enemy():
 	var screen_size = get_viewport().get_visible_rect().size
