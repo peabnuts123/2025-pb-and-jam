@@ -1,9 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://e3mcb03cfh1x"]
+[gd_scene load_steps=21 format=3 uid="uid://e3mcb03cfh1x"]
 
 [ext_resource type="Script" uid="uid://dh762j2aumbf7" path="res://scripts/gameplay/bullet-hell/bullet.gd" id="1_4wbcd"]
-[ext_resource type="Texture2D" uid="uid://xkun4ycvr0ja" path="res://assets/bullet-placeholders/16x16px/03.png" id="3_x81xd"]
-[ext_resource type="Texture2D" uid="uid://du54nn81h0pwd" path="res://assets/bullet-placeholders/16x16px/05.png" id="4_i7sxd"]
-[ext_resource type="Texture2D" uid="uid://cg2ja56m4ew4e" path="res://assets/bullet-placeholders/16x16px/04.png" id="5_j4j8g"]
+[ext_resource type="Texture2D" uid="uid://chmi2vs1oedm1" path="res://assets/dust-bunny/enemy-bullet_poison.png" id="3_n6kk2"]
+[ext_resource type="Texture2D" uid="uid://pjq4ilpgay40" path="res://assets/dust-bunny/enemy-bullet_slow.png" id="4_n6kk2"]
+[ext_resource type="Texture2D" uid="uid://df6lroqchg0vb" path="res://assets/dust-bunny/enemy-bullet_stun.png" id="5_n6kk2"]
 [ext_resource type="Texture2D" uid="uid://qtnsfwbs7bai" path="res://assets/dust-bunny/enemy-bullet.png" id="6_n6kk2"]
 [ext_resource type="AudioStream" uid="uid://b8pe7dtqkfb11" path="res://assets/audio/enemy-shoot.wav" id="6_x81xd"]
 
@@ -19,17 +19,41 @@ region = Rect2(200, 0, 200, 200)
 atlas = ExtResource("6_n6kk2")
 region = Rect2(400, 0, 200, 200)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n6kk2"]
-atlas = ExtResource("3_x81xd")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpdyg"]
+atlas = ExtResource("3_n6kk2")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce1tn"]
+atlas = ExtResource("3_n6kk2")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aevo0"]
+atlas = ExtResource("3_n6kk2")
+region = Rect2(400, 0, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pdv0h"]
-atlas = ExtResource("4_i7sxd")
-region = Rect2(0, 0, 16, 16)
+atlas = ExtResource("4_n6kk2")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6skg"]
+atlas = ExtResource("4_n6kk2")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0emlp"]
+atlas = ExtResource("4_n6kk2")
+region = Rect2(400, 0, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xa6cp"]
-atlas = ExtResource("5_j4j8g")
-region = Rect2(0, 0, 16, 16)
+atlas = ExtResource("5_n6kk2")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qamry"]
+atlas = ExtResource("5_n6kk2")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vve3"]
+atlas = ExtResource("5_n6kk2")
+region = Rect2(400, 0, 200, 200)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n6kk2"]
 animations = [{
@@ -49,7 +73,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n6kk2")
+"texture": SubResource("AtlasTexture_qpdyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce1tn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aevo0")
 }],
 "loop": true,
 "name": &"poison",
@@ -58,6 +88,12 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pdv0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6skg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0emlp")
 }],
 "loop": true,
 "name": &"slow",
@@ -66,6 +102,12 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xa6cp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qamry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vve3")
 }],
 "loop": true,
 "name": &"stun",
@@ -82,6 +124,7 @@ script = ExtResource("1_4wbcd")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_n6kk2")
+animation = &"stun"
 autoplay = "default"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
