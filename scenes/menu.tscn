@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ch1arasjga7d5"]
+[gd_scene load_steps=7 format=3 uid="uid://ch1arasjga7d5"]
 
 [ext_resource type="Script" uid="uid://cntvyyy03tkm0" path="res://scripts/menu/menu.gd" id="1_vjb58"]
 [ext_resource type="Texture2D" uid="uid://cajtwltb7lebq" path="res://assets/backgrounds/intro.png" id="2_mhnvy"]
 [ext_resource type="Script" uid="uid://4n6l4v3v7a6e" path="res://scripts/menu/game_over_message.gd" id="2_vjb58"]
 [ext_resource type="Theme" uid="uid://b6ant41uglamm" path="res://resources/theme.tres" id="3_4ytvr"]
 [ext_resource type="Script" uid="uid://csr31pjway5n4" path="res://scripts/menu/coin_display.gd" id="3_con2f"]
+[ext_resource type="AudioStream" uid="uid://d1gf4yxalbek8" path="res://assets/audio/enya.ogg" id="6_g3eks"]
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_vjb58")
@@ -12,7 +13,6 @@ script = ExtResource("1_vjb58")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Background" type="TextureRect" parent="CanvasLayer"]
-modulate = Color(1, 1, 1, 0.501961)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -65,13 +65,15 @@ layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Container/Stats"]
 layout_mode = 2
+theme_override_constants/separation = 30
 
 [node name="Title" type="Label" parent="CanvasLayer/Container/Stats/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_vertical = 8
 theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 50
 text = "Stats"
+vertical_alignment = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Container/Stats/HBoxContainer"]
 layout_mode = 2
@@ -82,6 +84,7 @@ layout_mode = 2
 theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 30
 text = "Coin"
+vertical_alignment = 1
 
 [node name="Value" type="Label" parent="CanvasLayer/Container/Stats/HBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -155,6 +158,10 @@ layout_mode = 2
 theme = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 30
 text = " +1 (5 coin) "
+
+[node name="GameOverMusic" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+stream = ExtResource("6_g3eks")
+pitch_scale = 0.8
 
 [connection signal="pressed" from="CanvasLayer/Container/Play button" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Container/Stats/Wellbeing/Button" to="." method="_on_upgrade_wellbeing"]

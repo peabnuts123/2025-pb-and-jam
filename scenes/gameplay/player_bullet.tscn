@@ -1,31 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bli4el2h0500q"]
+[gd_scene load_steps=5 format=3 uid="uid://bli4el2h0500q"]
 
 [ext_resource type="Script" uid="uid://ctb2eu65lyy04" path="res://scripts/gameplay/bullet-hell/player_bullet.gd" id="1_djmgg"]
-[ext_resource type="Texture2D" uid="uid://qtnsfwbs7bai" path="res://assets/dust-bunny/enemy-bullet.png" id="2_djmgg"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e1taw"]
-atlas = ExtResource("2_djmgg")
-region = Rect2(0, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ju8ng"]
-atlas = ExtResource("2_djmgg")
-region = Rect2(200, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x7iol"]
-atlas = ExtResource("2_djmgg")
-region = Rect2(400, 0, 200, 200)
+[ext_resource type="Texture2D" uid="uid://mretuw13s34y" path="res://assets/player/player_attack.png" id="2_djmgg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_27t5f"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e1taw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ju8ng")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x7iol")
+"texture": ExtResource("2_djmgg")
 }],
 "loop": true,
 "name": &"default",
